@@ -22096,13 +22096,13 @@ packages:
     dev: false
 
   file:projects/subapp-util.tgz:
-    resolution: {integrity: sha512-MpkfjGGQ1f15muehq4so7cC3ZjHc9qFGNSMMgMFvmMPSjXAUguHQq1l201oxH69A+i6PU2ycrHmjiG4S3X58Xw==, tarball: file:projects/subapp-util.tgz}
+    resolution: {integrity: sha512-r7kzxAN+/iPUhXN+0Z4xG9pGQoPupHqTyjOUp8mcF2Qg0/zD14Dfr/mNY4t/7IsAtShRfL61D0zLPSl2KJsqhQ==, tarball: file:projects/subapp-util.tgz}
     name: '@rush-temp/subapp-util'
     version: 0.0.0
     dependencies:
       '@xarc/run': 1.1.1
       electrode-archetype-njs-module-dev: 3.0.3
-      filter-scan-dir: 1.1.1
+      filter-scan-dir: 1.5.5
       optional-require: 1.1.8
     dev: false
 
