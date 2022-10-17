@@ -1,6 +1,5 @@
-import FrameworkLib from "./fe-framework-lib";
-
 import { setupFramework } from "subapp-web";
+import FrameworkLib from "./fe-framework-lib";
 
 setupFramework(FrameworkLib);
 
