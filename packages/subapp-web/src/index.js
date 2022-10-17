@@ -28,7 +28,7 @@ export function loadSubApp(info, renderStart, options) {
 
   // subapp already loaded, do nothing and return the info
   if (subApp._started) {
-    // console.error("SubApp", name, "already loaded");
+    console.error("SubApp", name, "already loaded");
     return info;
   }
 

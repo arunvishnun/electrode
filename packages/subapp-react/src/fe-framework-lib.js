@@ -13,7 +13,8 @@ class FrameworkLib {
      const Component = subApp.info.StartComponent || subApp.info.Component;
     if (element) {
       if (options.serverSideRendering) {
-          hydrateRoot(element, <Component {...props} />);
+        // hydrate 
+        hydrateRoot(element, <Component {...props} />);
       } else {
         createRoot(element).render(<Component {...props} />);
       }
