@@ -35,7 +35,7 @@
     "@babel/runtime": "^7.17.9",
     "isomorphic-loader": "^4.5.0",
     "optional-require": "^1.1.8",
-    "subapp-util": "^1.1.4",
+    "subapp-util": "workspace:^1.1.4",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

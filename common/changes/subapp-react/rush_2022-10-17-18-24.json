@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "subapp-react",
+      "comment": "changes to test rush",
+      "type": "patch"
+    }
+  ],
+  "packageName": "subapp-react"
+}

@@ -35,7 +35,7 @@
     "stylus-relative-loader": "^4.0.0"
   },
   "devDependencies": {
-    "opt-archetype-check": "1.0.0",
+    "opt-archetype-check": "workspace:*",
     "shx": "^0.3.4"
   },
   "xarcOptCheck": {

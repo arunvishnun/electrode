@@ -23,9 +23,9 @@
     "index-page"
   ],
   "dependencies": {
-    "@xarc/jsx-renderer": "^1.0.11",
-    "@xarc/render-context": "^1.0.8",
-    "@xarc/tag-renderer": "^1.0.10",
+    "@xarc/jsx-renderer": "workspace:^1.0.11",
+    "@xarc/render-context": "workspace:^1.0.8",
+    "@xarc/tag-renderer": "workspace:^1.0.10",
     "lodash": "^4.17.21",
     "require-at": "^1.0.6"
   },

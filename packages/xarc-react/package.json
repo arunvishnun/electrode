@@ -25,9 +25,9 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@types/react": ">=18",
-    "@xarc/render-context": "^1.0.8",
-    "@xarc/subapp": "^0.3.4",
-    "@xarc/tag-renderer": "^1.0.10",
+    "@xarc/render-context": "workspace:^1.0.8",
+    "@xarc/subapp": "workspace:^0.3.4",
+    "@xarc/tag-renderer": "workspace:^1.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tslib": "^2.4.0"

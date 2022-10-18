@@ -24,7 +24,7 @@
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.26.0",
     "webpack-cli": "^3.1.2",
-    "webpack-config-composer": "^1.1.6",
+    "webpack-config-composer": "workspace:^1.1.6",
     "webpack-stats-plugin": "^0.2.1",
     "xclap": "^0.2.53",
     "xsh": "^0.4.4"

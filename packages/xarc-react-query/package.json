@@ -28,7 +28,7 @@
     "react-dom": "*"
   },
   "dependencies": {
-    "@xarc/subapp": "^0.3.4",
+    "@xarc/subapp": "workspace:^0.3.4",
     "react-query": "~3.39.0",
     "tslib": "^2.4.0"
   },

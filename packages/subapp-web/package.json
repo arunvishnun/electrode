@@ -37,7 +37,7 @@
     "lodash": "^4.17.15",
     "optional-require": "^1.1.8",
     "request": "^2.88.0",
-    "subapp-util": "^1.1.4",
+    "subapp-util": "workspace:^1.1.4",
     "xaa": "^1.7.3"
   },
   "peerDependencies": {
@@ -50,16 +50,16 @@
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
     "@babel/register": "^7.7.7",
-    "@xarc/app": "^11.0.0",
+    "@xarc/app": "workspace:^11.0.0",
     "@xarc/run": "^1.1.1",
     "babel-preset-minify": "^0.5.1",
     "chai-as-promised": "^7.1.1",
     "electrode-archetype-njs-module-dev": "^3.0.3",
-    "electrode-react-webapp": "^5.0.0",
+    "electrode-react-webapp": "workspace:^5.0.0",
     "jsdom": "^19.0.0",
     "mock-require": "^3.0.3",
     "run-verify": "^1.2.6",
-    "subapp-pkg-util": "0.0.1"
+    "subapp-pkg-util": "workspace:*"
   },
   "nyc": {
     "all": true,

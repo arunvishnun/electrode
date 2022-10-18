@@ -18,7 +18,7 @@
   "author": "Electrode <https://github.com/electrode-io/electrode>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@xarc/render-context": "^1.0.8",
+    "@xarc/render-context": "workspace:^1.0.8",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
