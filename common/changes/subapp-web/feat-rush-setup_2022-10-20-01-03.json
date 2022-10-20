@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "subapp-web",
+      "comment": "test changes for rush publish",
+      "type": "patch"
+    }
+  ],
+  "packageName": "subapp-web"
+}

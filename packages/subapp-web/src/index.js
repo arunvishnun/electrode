@@ -1,6 +1,6 @@
 import { createBrowserHistory } from "history";
-import xarc from "./xarc";
 import makeSubAppSpec from "./make-subapp-spec";
+import xarc from "./xarc";
 
 export { default as makeSubAppSpec } from "./make-subapp-spec";
 
