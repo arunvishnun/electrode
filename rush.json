@@ -469,7 +469,8 @@
     },
     {
       "packageName": "subapp-web",
-      "projectFolder": "packages/subapp-web"
+      "projectFolder": "packages/subapp-web",
+      "shouldPublish": true
     },
     {
       "packageName": "subapp-util",
