@@ -25,3 +25,18 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: node common/scripts/install-run-rush.js install
       - run: node common/scripts/install-run-rush.js rebuild --verbose
+  publish:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/master' }}
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: node common/scripts/install-run-rush.js update
+      - run: rush publish --prerelease-name beta --partial-prerelease --pack
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
