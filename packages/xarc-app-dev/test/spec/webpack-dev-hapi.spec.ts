@@ -42,7 +42,7 @@ describe("dev-hapi 16", function () {
     return data;
   };
 
-  const testPlugin16 = async options => {
+  const testPlugin16 = options => {
     let server;
     let data;
     const config = {
@@ -62,7 +62,6 @@ describe("dev-hapi 16", function () {
         return server.inject("/test");
       },
       resp => {
-        debugger;
         expect(resp.statusCode).to.equal(200);
         expect(data.request.app).to.have.key("webpackDev").that.is.an("object");
       },
