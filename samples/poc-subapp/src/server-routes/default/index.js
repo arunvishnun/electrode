@@ -32,6 +32,7 @@ const Template = (
         </noscript>
 
         <div style="background: cyan">
+          Test code
           <Require
             _id="subapp-web/lib/load"
             name="Header"
