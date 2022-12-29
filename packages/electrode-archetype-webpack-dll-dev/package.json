@@ -25,7 +25,7 @@
     "webpack": "~5.74.0",
     "webpack-cli": "4.8.0",
     "webpack-config-composer": "^1.1.6",
-    "webpack-stats-plugin": "^0.2.1",
+    "webpack-stats-plugin": "^1.1.1",
     "xclap": "^0.2.53",
     "xsh": "^0.4.4"
   },

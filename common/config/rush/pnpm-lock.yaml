@@ -3271,7 +3271,7 @@ packages:
     resolution: {integrity: sha512-/19t63pFYU0ikrdbXKBWj9PCdnKyTd0Qkz0X91Ta081cYsq90OxYdcWwK/dwEoDa6dtXgj2HJfmzgq+QZTHdmQ==}
     dependencies:
       '@types/chai': 4.3.4
-      '@types/sinon': 10.0.13
+      '@types/sinon': 9.0.11
     dev: false
 
   /@types/sinon/10.0.13:
@@ -19898,11 +19898,6 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: false
 
-  /webpack-stats-plugin/0.2.1:
-    resolution: {integrity: sha512-OYMZLpZrK/qLA79NE4kC4DCt85h/5ipvWJcsefKe9MMw0qU4/ck/IJg+4OmWA+5EfrZZpHXDq92IptfYDWVfkw==}
-    engines: {node: '>=4'}
-    dev: false
-
   /webpack-stats-plugin/1.1.1:
     resolution: {integrity: sha512-aWwE/YuO2W7VCOyWwyDJ7BRSYRYjeXat+X31YiasMM3FS6/4X9W4Mb9Q0g+jIdVgArr1Mb08sHBJKMT5M9+gVA==}
     dev: false
@@ -20718,7 +20713,7 @@ packages:
     dev: false
 
   file:projects/electrode-archetype-webpack-dll-dev.tgz_73b0bf351ab9a055d7b5b1930428d9b3:
-    resolution: {integrity: sha512-m//5rthMVTuKtFkTwKY1KZmetsu8u5JD6Sj6u7B2I/pGbwQOg3Mdb0ESM2FgCNF3B/p+YAL8rqtEfa/mu+bQEQ==, tarball: file:projects/electrode-archetype-webpack-dll-dev.tgz}
+    resolution: {integrity: sha512-No5/Gu+xvdqXsO3GoAdU/1SoLgZX1ntDjirmFnZtDS7q2QLl53spVbPjr3s545mnWg6UepEZ36aDIKDQMHvYkg==, tarball: file:projects/electrode-archetype-webpack-dll-dev.tgz}
     id: file:projects/electrode-archetype-webpack-dll-dev.tgz
     name: '@rush-temp/electrode-archetype-webpack-dll-dev'
     version: 0.0.0
@@ -20732,7 +20727,7 @@ packages:
       uglifyjs-webpack-plugin: 2.2.0_webpack@5.74.0
       webpack: 5.74.0_f52b93474dd2fb1e4f90db635f9d54a8
       webpack-cli: 4.8.0_4493e4bc9629db056a964d5a371c6977
-      webpack-stats-plugin: 0.2.1
+      webpack-stats-plugin: 1.1.1
       xclap: 0.2.53
       xsh: 0.4.5
     transitivePeerDependencies:
