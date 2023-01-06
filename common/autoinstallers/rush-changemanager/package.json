@@ -1,0 +1,11 @@
+{
+  "name": "rush-changemanager",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@microsoft/rush-lib": "^5.88.0",
+    "@rushstack/node-core-library": "^3.53.3",
+    "yargs": "^17.6.2",
+    "conventional-commit-types": "^3.0.0"
+  }
+}
