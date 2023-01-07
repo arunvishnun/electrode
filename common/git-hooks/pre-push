@@ -4,4 +4,4 @@
 # It receives the name and location of the remote as parameters, and a list of to-be-updated refs through stdin.
 # You can use it to validate a set of ref updates before a push occurs (a non-zero exit code will abort the push).
 
-rush change -v
+rush change -v -b upstream/rush-pnpm-migration
