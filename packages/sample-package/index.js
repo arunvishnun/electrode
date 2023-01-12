@@ -1,1 +1,1 @@
-console.log("sample app for testing rush publish")
+console.log("sample app for testing rush publish!")
