@@ -1,0 +1,17 @@
+{
+  "name": "sample-package",
+  "entries": [
+    {
+      "version": "1.0.1",
+      "tag": "sample-package_v1.0.1",
+      "date": "Thu, 12 Jan 2023 00:24:17 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Text changes in the package"
+          }
+        ]
+      }
+    }
+  ]
+}
