@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "sample-package-rush",
+      "comment": "adding a new sample application",
+      "type": "major"
+    }
+  ],
+  "packageName": "sample-package-rush"
+}

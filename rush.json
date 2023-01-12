@@ -692,6 +692,12 @@
       "shouldPublish": true,
       "skipRushCheck": true
     },   
+    {
+      "packageName": "sample-package-rush",
+      "projectFolder": "packages/sample-package-rush",
+      "shouldPublish": true,
+      "skipRushCheck": true
+    },
 
     // Sample apps
     {
