@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "sample-package-rush",
+      "comment": "appending new comment to change",
+      "type": "minor"
+    }
+  ],
+  "packageName": "sample-package-rush"
+}
