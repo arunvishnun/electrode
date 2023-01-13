@@ -2,6 +2,20 @@
   "name": "rush-package-test",
   "entries": [
     {
+      "version": "2.0.0",
+      "tag": "rush-package-test_v2.0.0",
+      "date": "Fri, 13 Jan 2023 00:54:16 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "test package publish - 3",
+            "author": "arunvishnun <1584121+arunvishnun@users.noreply.github.com>",
+            "commit": "c1437bbe5ae506244dd51d293224b57c22468338"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.1.2",
       "tag": "rush-package-test_v1.1.2",
       "date": "Fri, 13 Jan 2023 00:04:54 GMT",
