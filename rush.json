@@ -697,7 +697,7 @@
     {
       "packageName": "poc-rush-publish",
       "projectFolder": "packages/poc-rush-publish",
-      "shouldPublish": false,
+      "shouldPublish": true,
       "skipRushCheck": true
     },
 
