@@ -1,6 +1,13 @@
 # Change Log - rush-package-test
 
-This log was last generated on Fri, 13 Jan 2023 00:04:54 GMT and should not be manually modified.
+This log was last generated on Fri, 13 Jan 2023 01:01:08 GMT and should not be manually modified.
+
+## 3.0.0
+Fri, 13 Jan 2023 01:01:08 GMT
+
+### Breaking changes
+
+- test package publish - 3
 
 ## 1.1.2
 Fri, 13 Jan 2023 00:04:54 GMT
