@@ -23,7 +23,6 @@ $ rush build # Run build command on all projects whose source files have changed
 
 ### Useful Commands
 
-
 `rush install` - Installs package dependencies for all
 packages, based on the shrinkwrap file that is created/updated using "rush update". 
 It is recommended to use this if you do not want to make changes to *lock files. CI jobs use this command for the same reason.
@@ -34,7 +33,6 @@ json files, and updates the shrinkwrap file as needed.
 `rush build` - Run this command after install step to perform build on all packages. These are incremental builds. In other words, it only builds projects whose source files have changed since the last successful build.
 
 `rush test` - Runs test on all packages. A `test` script is required in package.json for all packages.
-
 
 `rushx <command>` - Executes `scripts` mentioned in individual packages. This command should be ran within a package directory.
 
@@ -56,7 +54,6 @@ And when you open the browser at `http://localhost:3000`, you should see the dem
 - You should bootstrap the entire repo at the top dir at least once with `rush install`
 - After you make changes to any module under packages, if you want to test them in one of the samples, just run `` rushx <command>`` in that sample and it will ensure all changed local packages are properly rebuilt and installed.
 
-### 
 
 #### Test with `@xarc/create-app`
 
