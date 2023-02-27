@@ -112,16 +112,6 @@ describe("fastify-plugin", function () {
       () => fastifyPlugin(server, {}),
       () => server.start(),
       async () => {
-        const res = await server.inject({
-          method: "GET",
-          url: `http://localhost:3002/`
-        });
-        expect(res.statusCode).to.equal(200);
-        let data = "";
-        res.on("data", chunk => (data += chunk));
-        res.on("done", () => {
-          expect(data.to.contain("Hello World"));
-        });
         http.get("http://localhost:3002/", response => {
           expect(response.statusCode).to.equal(200);
           let d = "";
