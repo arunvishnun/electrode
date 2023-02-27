@@ -47,7 +47,7 @@ describe("fastify-plugin", function () {
         delete process.env.APP_SRC_DIR;
       })
     );
-  }).timeout(10000);
+  }).timeout(5000);
 
   it("invokes subappServer's setup if it exists", async () => {
     const server = await require("@xarc/fastify-server")({
