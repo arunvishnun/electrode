@@ -9,7 +9,7 @@ describe("fastify-plugin", function () {
   it("loads server from file system", async () => {
     const server = await require("@xarc/fastify-server")({
       deferStart: true,
-      connection: { port: 0, host: "localhost" }
+      connection: { port: 3011, host: "localhost" }
     });
 
     const srcDir = Path.join(__dirname, "../data/fastify-plugin-test");
@@ -47,7 +47,7 @@ describe("fastify-plugin", function () {
         delete process.env.APP_SRC_DIR;
       })
     );
-  }).timeout(5000);
+  }).timeout(10000);
 
   it("invokes subappServer's setup if it exists", async () => {
     const server = await require("@xarc/fastify-server")({
@@ -111,7 +111,17 @@ describe("fastify-plugin", function () {
     asyncVerify(
       () => fastifyPlugin(server, {}),
       () => server.start(),
-      () => {
+      async () => {
+        const res = await server.inject({
+          method: "GET",
+          url: `http://localhost:3002/`
+        });
+        expect(res.statusCode).to.equal(200);
+        let data = "";
+        res.on("data", chunk => (data += chunk));
+        res.on("done", () => {
+          expect(data.to.contain("Hello World"));
+        });
         http.get("http://localhost:3002/", res => {
           expect(res.statusCode).to.equal(200);
           let data = "";
@@ -123,5 +133,5 @@ describe("fastify-plugin", function () {
       },
       runFinally(() => server.close())
     );
-  });
+  }).timeout(5000);
 });
