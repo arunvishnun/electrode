@@ -2,7 +2,7 @@
 
 const { fastifyPlugin } = require("../../lib/fastify-plugin");
 const Path = require("path");
-const { runFinally, asyncVerify, runTimeout } = require("run-verify");
+const { runFinally, runVerify, runTimeout } = require("run-verify");
 const http = require("http");
 
 describe("fastify-plugin", function () {
@@ -28,7 +28,7 @@ describe("fastify-plugin", function () {
       stats: Path.join(__dirname, "../data/fastify-plugin-test/stats.json")
     };
 
-    return asyncVerify(
+    return runVerify(
       runTimeout(4500),
       () => fastifyPlugin(server, opt),
       () => server.start(),
@@ -71,7 +71,7 @@ describe("fastify-plugin", function () {
       stats: Path.join(__dirname, "../data/fastify-plugin-test/stats.json")
     };
 
-    return asyncVerify(
+    return runVerify(
       runTimeout(4500),
       () => fastifyPlugin(server, opt),
       () => server.start(),
@@ -108,7 +108,7 @@ describe("fastify-plugin", function () {
       }
     });
 
-    asyncVerify(
+    return runVerify(
       () => fastifyPlugin(server, {}),
       () => server.start(),
       async () => {
