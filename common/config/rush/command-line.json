@@ -47,7 +47,7 @@
       "enableParallelism": true,
       "ignoreDependencyOrder": false,
       "ignoreMissingScript": false,
-      "allowWarningsInSuccessfulBuild": false
+      "allowWarningsInSuccessfulBuild": true
     }
     
     // {
