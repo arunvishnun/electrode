@@ -1,0 +1,17 @@
+{
+  "name": "@xarc/app-dev",
+  "entries": [
+    {
+      "version": "11.0.1",
+      "tag": "@xarc/app-dev_v11.0.1",
+      "date": "Wed, 01 Mar 2023 07:19:48 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "test change"
+          }
+        ]
+      }
+    }
+  ]
+}
