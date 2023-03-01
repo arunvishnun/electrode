@@ -1,0 +1,31 @@
+{
+  "name": "subapp-server",
+  "entries": [
+    {
+      "version": "2.1.0",
+      "tag": "subapp-server_v2.1.0",
+      "date": "Wed, 01 Mar 2023 01:31:41 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add phantom dependency `@xarc/render-context`. Add `@xarc/run` to dev dependency"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@xarc/index-page\" from `^1.0.11` to `^1.1.0`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/jsx-renderer\" from `^1.0.11` to `^1.0.12`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/tag-renderer\" from `^1.0.10` to `^1.0.11`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/render-context\" from `1.0.8` to `1.0.9`"
+          }
+        ]
+      }
+    }
+  ]
+}

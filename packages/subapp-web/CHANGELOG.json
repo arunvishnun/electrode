@@ -1,0 +1,28 @@
+{
+  "name": "subapp-web",
+  "entries": [
+    {
+      "version": "2.0.1",
+      "tag": "subapp-web_v2.0.1",
+      "date": "Wed, 01 Mar 2023 01:31:41 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Dev dependencies added and test updates"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@xarc/app\" from `^11.0.0` to `^11.1.0`"
+          },
+          {
+            "comment": "Updating dependency \"electrode-react-webapp\" from `^5.0.0` to `^5.1.0`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/app\" from `^11.0.0` to `^11.1.0`"
+          }
+        ]
+      }
+    }
+  ]
+}
