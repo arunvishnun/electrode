@@ -49,6 +49,7 @@ export const formUrl = ({
  */
 export function checkUserBabelRc(): false | string {
   const user = Path.resolve(".babelrc");
+  console.log('Test version policy')
   if (Fs.existsSync(user)) {
     const userRc = JSON.parse(Fs.readFileSync(user).toString());
     if (
