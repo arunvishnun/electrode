@@ -1,0 +1,17 @@
+{
+  "name": "@xarc/app",
+  "entries": [
+    {
+      "version": "11.0.1",
+      "tag": "@xarc/app_v11.0.1",
+      "date": "Wed, 01 Mar 2023 01:26:15 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "test version policy"
+          }
+        ]
+      }
+    }
+  ]
+}
