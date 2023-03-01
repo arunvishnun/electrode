@@ -39,6 +39,7 @@ export const formUrl = ({
       ? `${host}:${port}`
       : host;
 
+  console.log('test')
   return Url.format({ protocol: proto, host: host2, pathname: path, search });
 };
 
