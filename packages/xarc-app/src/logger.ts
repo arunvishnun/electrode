@@ -14,7 +14,6 @@ export const logger = {
 
     return this._logger[level](...args);
   },
-
   info(...args) {
     return this.doLog("info", ...args);
   },
