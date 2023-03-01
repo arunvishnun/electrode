@@ -1,0 +1,25 @@
+{
+  "name": "subapp-react",
+  "entries": [
+    {
+      "version": "1.0.1",
+      "tag": "subapp-react_v1.0.1",
+      "date": "Wed, 01 Mar 2023 01:14:31 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Patch upgrade for `optional-require` dependency"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"subapp-web\" from `^2.0.0` to `^2.0.1`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/app\" from `^11.0.0` to `^11.1.0`"
+          }
+        ]
+      }
+    }
+  ]
+}
