@@ -15,7 +15,7 @@ export const logger = {
     return this._logger[level](...args);
   },
   info(...args) {
-    cosole.log('test')
+    console.log('test')
     return this.doLog("info", ...args);
   },
   warn(...args) {
