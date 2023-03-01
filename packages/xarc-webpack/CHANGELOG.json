@@ -1,0 +1,34 @@
+{
+  "name": "@xarc/webpack",
+  "entries": [
+    {
+      "version": "11.2.0",
+      "tag": "@xarc/webpack_v11.2.0",
+      "date": "Wed, 01 Mar 2023 01:52:30 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "`webpack `minimum minor version upgrade from `^5.74` to `^5.75`, dev dependency upgrade for `@types/chai` and  `@types/mocha`"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@xarc/dev-base\" from `^0.1.0` to `^0.1.1`"
+          },
+          {
+            "comment": "Updating dependency \"webpack-config-composer\" from `^1.1.7` to `^1.2.0`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/app\" from `^11.0.1` to `^11.1.0`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/app\" from `^11.0.1` to `^11.1.0`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/app-dev\" from `^11.0.2` to `^11.1.0`"
+          }
+        ]
+      }
+    }
+  ]
+}
