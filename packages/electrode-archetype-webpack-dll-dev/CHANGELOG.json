@@ -1,0 +1,11 @@
+{
+  "name": "electrode-archetype-webpack-dll-dev",
+  "entries": [
+    {
+      "version": "3.0.0",
+      "tag": "electrode-archetype-webpack-dll-dev_v3.0.0",
+      "date": "Wed, 01 Mar 2023 01:44:43 GMT",
+      "comments": {}
+    }
+  ]
+}

@@ -34,7 +34,7 @@
     "Joel Chen <xchen@walmartlabs.com>"
   ],
   "dependencies": {
-    "@xarc/dev-base": "^0.1.0",
+    "@xarc/dev-base": "^0.1.1",
     "autoprefixer": "^9.6.0",
     "babel-loader": "^8.1.0",
     "chalk": "^4.1.0",

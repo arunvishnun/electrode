@@ -1,0 +1,17 @@
+{
+  "name": "@xarc/webpack",
+  "entries": [
+    {
+      "version": "11.1.4",
+      "tag": "@xarc/webpack_v11.1.4",
+      "date": "Wed, 01 Mar 2023 01:44:43 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@xarc/dev-base\" from `^0.1.0` to `^0.1.1`"
+          }
+        ]
+      }
+    }
+  ]
+}
