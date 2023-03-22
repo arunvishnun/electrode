@@ -122,12 +122,21 @@ describe("fastify-plugin", function () {
         res.on("done", () => {
           expect(data.to.contain("Hello World"));
         });
+<<<<<<< HEAD
         http.get("http://localhost:3002/", response => {
           expect(response.statusCode).to.equal(200);
           let d = "";
           response.on("data", chunk => (d += chunk));
           response.on("done", () => {
             expect(d.to.contain("Hello World"));
+=======
+        http.get("http://localhost:3002/", res => {
+          expect(res.statusCode).to.equal(200);
+          let data = "";
+          res.on("data", chunk => (data += chunk));
+          res.on("done", () => {
+            expect(data.to.contain("Hello World"));
+>>>>>>> 300b6ac9 (fix: test issues in sample apps (#10))
           });
         });
       },
