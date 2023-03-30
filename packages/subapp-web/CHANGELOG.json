@@ -1,0 +1,31 @@
+{
+  "name": "subapp-web",
+  "entries": [
+    {
+      "version": "2.1.1",
+      "tag": "subapp-web_v2.1.1",
+      "date": "Thu, 30 Mar 2023 22:38:22 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Enhancement to set CSP nonce separately for script and styles"
+          },
+          {
+            "comment": "Dev dependencies added and test updates"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@xarc/app\" from `^11.0.0` to `^11.1.0`"
+          },
+          {
+            "comment": "Updating dependency \"electrode-react-webapp\" from `^5.0.0` to `^5.1.0`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/app\" from `^11.0.0` to `^11.1.0`"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "webpack-config-composer",
+  "entries": [
+    {
+      "version": "1.2.0",
+      "tag": "webpack-config-composer_v1.2.0",
+      "date": "Thu, 30 Mar 2023 22:38:22 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "`typescript` minor version upgrade"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "electrode-ui-config",
+  "entries": [
+    {
+      "version": "1.4.0",
+      "tag": "electrode-ui-config_v1.4.0",
+      "date": "Thu, 30 Mar 2023 22:38:22 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Export missing `fastify` config"
+          }
+        ]
+      }
+    }
+  ]
+}

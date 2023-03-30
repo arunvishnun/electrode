@@ -1,0 +1,39 @@
+{
+  "name": "@xarc/app-dev",
+  "entries": [
+    {
+      "version": "11.1.0",
+      "tag": "@xarc/app-dev_v11.1.0",
+      "date": "Thu, 30 Mar 2023 22:38:22 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fixing an import bug in app-dev"
+          }
+        ],
+        "minor": [
+          {
+            "comment": "Add `webpack` - this being a phantom dependency, rush does not allow phantom dependencies"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@xarc/dev-base\" from `^0.1.0` to `^0.1.1`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/subapp\" from `^0.3.4` to `^0.3.5`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/webpack\" from `^11.1.4` to `^11.2.0`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/app\" from `^11.0.1` to `^11.1.0`"
+          },
+          {
+            "comment": "Updating dependency \"@xarc/app\" from `^11.0.1` to `^11.1.0`"
+          }
+        ]
+      }
+    }
+  ]
+}

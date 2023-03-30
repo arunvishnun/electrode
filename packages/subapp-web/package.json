@@ -1,6 +1,6 @@
 {
   "name": "subapp-web",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Electrode subapp web support",
   "module": "dist/dev/index.js",
   "main": "lib/index.js",
@@ -43,7 +43,7 @@
     "xaa": "^1.7.3"
   },
   "peerDependencies": {
-    "@xarc/app": "^11.0.0"
+    "@xarc/app": "^11.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -52,7 +52,7 @@
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
     "@babel/register": "^7.7.7",
-    "@xarc/app": "^11.0.0",
+    "@xarc/app": "^11.1.0",
     "@xarc/module-dev": "^4.1.0",
     "@xarc/run": "^1.1.1",
     "babel-preset-minify": "^0.5.1",
@@ -64,7 +64,7 @@
     "eslint-config-walmart": "^2.2.1",
     "eslint-plugin-filenames": "^1.1.0",
     "eslint-plugin-jsdoc": "^30.7.9",
-    "electrode-react-webapp": "^5.0.0",
+    "electrode-react-webapp": "^5.1.0",
     "jsdom": "^19.0.0",
     "mock-require": "^3.0.3",
     "run-verify": "^1.2.6",

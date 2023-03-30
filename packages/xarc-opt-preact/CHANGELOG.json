@@ -1,0 +1,17 @@
+{
+  "name": "@xarc/opt-preact",
+  "entries": [
+    {
+      "version": "1.0.2",
+      "tag": "@xarc/opt-preact_v1.0.2",
+      "date": "Thu, 30 Mar 2023 22:38:22 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": " Update dev dependency - `opt-archetype-check`"
+          }
+        ]
+      }
+    }
+  ]
+}
