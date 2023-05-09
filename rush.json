@@ -424,14 +424,14 @@
       "projectFolder": "packages/electrode-archetype-webpack-dll",
       "shouldPublish": true,
       "skipRushCheck": true,
-      "versionPolicyName": "archetypeDllVersion"
+      // "versionPolicyName": "archetypeDllVersion"
     },
     {
       "packageName": "electrode-archetype-webpack-dll-dev",
       "projectFolder": "packages/electrode-archetype-webpack-dll-dev",
       "shouldPublish": true,
       "skipRushCheck": true,
-      "versionPolicyName": "archetypeDllVersion"
+      // "versionPolicyName": "archetypeDllVersion"
     },
     {
       "packageName": "electrode-cdn-file-loader",
@@ -534,14 +534,14 @@
       "projectFolder": "packages/xarc-app",
       "shouldPublish": true,
       "skipRushCheck": true,
-      "versionPolicyName": "xarcAppVersion"
+      // "versionPolicyName": "xarcAppVersion"
     },
     {
       "packageName": "@xarc/app-dev",
       "projectFolder": "packages/xarc-app-dev",
       "shouldPublish": true,
       "skipRushCheck": true,
-      "versionPolicyName": "xarcAppVersion"
+      // "versionPolicyName": "xarcAppVersion"
     },
     {
       "packageName": "@xarc/create-app",
