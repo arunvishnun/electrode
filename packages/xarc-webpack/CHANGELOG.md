@@ -1,6 +1,13 @@
 # Change Log - @xarc/webpack
 
-This log was last generated on Fri, 02 Jun 2023 17:01:48 GMT and should not be manually modified.
+This log was last generated on Wed, 07 Jun 2023 19:32:35 GMT and should not be manually modified.
+
+## 11.2.3
+Wed, 07 Jun 2023 19:32:35 GMT
+
+### Patches
+
+- Revert the fix added for cdn map issue as this created unexpected sideeffects
 
 ## 11.2.2
 Fri, 02 Jun 2023 17:01:48 GMT
