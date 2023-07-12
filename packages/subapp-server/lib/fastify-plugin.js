@@ -32,10 +32,11 @@ const templateRouting = require("./template-routing");
 function makeRouteHandler({ path, routeRenderer, routeOptions }) {
   const useStream = routeOptions.useStream !== false;
 
+  const { styleNonce = "", scriptNonce = "" } = setCSPNonce({ routeOptions });
+  const cspHeader = getCSPHeader({ styleNonce, scriptNonce });
+
   return async (request, reply) => {
     try {
-      const { styleNonce = "", scriptNonce = "" } = setCSPNonce({ routeOptions });
-
       const context = await routeRenderer({
         useStream,
         mode: "",
@@ -44,8 +45,6 @@ function makeRouteHandler({ path, routeRenderer, routeOptions }) {
 
       const data = context.result;
       const status = data.status;
-
-      const cspHeader = getCSPHeader({ styleNonce, scriptNonce });
 
       if (cspHeader) {
         reply.header("Content-Security-Policy", cspHeader);
