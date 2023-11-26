@@ -45,7 +45,7 @@
     "@hapi/inert": "^5.1.2",
     "@loadable/babel-plugin": "^5.13.2",
     "@loadable/component": "^5.7.0",
-    "@xarc/app": "^8.0.0",
+    "@xarc/app": "^9.0.0",
     "@xarc/opt-react": "^1.0.0",
     "@xarc/react": "../../packages/xarc-react",
     "electrode-confippet": "^1.5.0",
