@@ -43,7 +43,7 @@
     "@hapi/good": "^8.2.4",
     "@hapi/good-console": "^8.1.2",
     "@hapi/inert": "^5.1.2",
-    "@xarc/app": "^8.0.0",
+    "@xarc/app": "^9.0.0",
     "@xarc/opt-react": "^1.0.0",
     "electrode-confippet": "^1.5.0",
     "electrode-cookies": "^1.0.0",
