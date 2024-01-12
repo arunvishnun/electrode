@@ -34,7 +34,7 @@
     "@types/jest": "^26.0.4",
     "babel-jest": "^26.1.0",
     "eslint-plugin-jest": "^23.18.0",
-    "jest": "^26.1.0"
+    "jest": "^28.0.0"
   },
   "devDependencies": {
     "opt-archetype-check": "1.0.0",
