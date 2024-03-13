@@ -10,8 +10,18 @@
     "lint:fix": "clap lint --fix",
     "coverage": "clap coverage",
     "check": "clap check",
-    "build": "clap compile",
-    "prepublishOnly": "clap compile"
+    "build": "xrun user/build",
+    "prepublishOnly": "xrun user/build",
+    "compile-swc-dev": "swc src --out-dir dist/dev --clear --source-maps",
+    "compile-dev": "BABEL_ENV=-src-dev babel src -d dist/dev --delete-dir-on-start --source-maps",
+    "compile-min": "BABEL_ENV=-src-minify babel src -d dist/min --no-comments --delete-dir-on-start",
+    "compile-node": "BABEL_ENV=-src-node babel src -d dist/node --delete-dir-on-start --source-maps",
+    "compile": "concurrently 'pnpm compile-dev' 'pnpm compile-min' 'pnpm compile-node'",
+
+
+    
+    "build-node-cjs": "swc src -s -d dist/node-cjs --config-file swcrc.node.cjs.json"
+    
   },
   "keywords": [
     "web",
@@ -42,6 +52,8 @@
     "@xarc/app": "^11.0.8"
   },
   "devDependencies": {
+    "@swc/core": "^1.4.6",
+    "@swc/cli": "^0.1.65",
     "@babel/cli": "^7.22.10",
     "@babel/core": "^7.22.11",
     "@babel/plugin-transform-runtime": "^7.22.10",
@@ -64,7 +76,8 @@
     "mocha": "^10.2.0",
     "mock-require": "^3.0.3",
     "run-verify": "^1.2.6",
-    "subapp-pkg-util": "0.0.1"
+    "subapp-pkg-util": "0.0.1",
+    "concurrently": "8.2.2"
   },
   "nyc": {
     "all": true,
