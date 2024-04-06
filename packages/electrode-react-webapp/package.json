@@ -58,7 +58,7 @@
   "dependencies": {
     "electrode-archetype-njs-module-dev": "^3.0.3",
     "electrode-hapi-compat": "^1.2.0",
-    "eslint": "^7.32.0",
+    "eslint": "^9.0.0",
     "eslint-config-walmart": "^2.2.1",
     "eslint-plugin-filenames": "^1.1.0",
     "eslint-plugin-jsdoc": "^30.7.9",
@@ -84,7 +84,7 @@
     "electrode-redux-router-engine": "6.0.0",
     "electrode-server": "^1.8.0",
     "electrode-server2": "npm:electrode-server@^2.0.0",
-    "eslint": "^7.32.0",
+    "eslint": "^9.0.0",
     "eslint-config-walmart": "^2.2.1",
     "eslint-plugin-filenames": "^1.1.0",
     "eslint-plugin-jsdoc": "^30.7.9",
