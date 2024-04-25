@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  *
  * NOTE: this file is actually maintained centrally in a directory in our repo.
@@ -9,94 +7,103 @@
  * prepare.  They each copy it from the central one.
  */
 
-const Path = require("path");
-const Fs = require("fs");
-const assert = require("assert");
+import fs from 'fs';
+import path from 'path';
+import assert from 'assert';
+import url from 'url';
 
-const isSameMajorVersion = (verA, verB) => {
-  // check for simple semver like x.x.x, ~x.x.x, or ^x.x.x only
-  let majorA = verA.match(/[\~\^]{0,1}(\d+)\.(\d+)\.(\d+)/);
-  if (majorA) {
-    majorA = majorA.slice(1, 4);
-    const majorB = verB.split(".");
-    if (majorB[0] !== majorA[0] || (majorB[0] === "0" && majorB[1] !== majorA[1])) {
-      return false;
+/**
+ * Determines if two versions have the same major version number.
+ * @param {string} verA - Version string A.
+ * @param {string} verB - Version string B.
+ * @returns {boolean} True if both versions share the same major version.
+ */
+function isSameMajorVersion(verA, verB) {
+    let majorA = verA.match(/[\~\^]{0,1}(\d+)\.(\d+)\.(\d+)/);
+    if (majorA) {
+        majorA = majorA.slice(1, 4);
+        const majorB = verB.split(".");
+        if (majorB[0] !== majorA[0] || (majorB[0] === "0" && majorB[1] !== majorA[1])) {
+            return false;
+        }
     }
-  }
-
-  return true;
-};
-
-function lookupAppDirByInitCwd() {
-  //
-  // env INIT_CWD is set by npm to the dir where it started running.
-  // Note that it's not strictly where package.json is, because npm
-  // would search up the directories for the first package.json found,
-  // which is why the we need to do the same search up lookup below.
-  //
-  let lookupDir = process.env.INIT_CWD;
-
-  if (!lookupDir) return undefined;
-
-  let count = 0;
-
-  while (count < 100) {
-    const pkgFile = Path.join(lookupDir, "package.json");
-
-    try {
-      require(pkgFile);
-      return lookupDir;
-    } catch (err) {
-      //
-    }
-
-    const upDir = Path.join(lookupDir, "..");
-    if (upDir === lookupDir) return undefined;
-    lookupDir = upDir;
-    count++;
-  }
-
-  return undefined;
+    return true;
 }
 
-const cwd = process.env.PWD || process.cwd();
+/**
+ * Looks up the application directory starting from the npm INIT_CWD environment variable.
+ * Searches upwards until a package.json is found or the root is reached.
+ * @returns {Promise<string|undefined>} The directory path of the application or undefined.
+ */
+async function lookupAppDirByInitCwd() {
+    let lookupDir = process.env.INIT_CWD;
+    if (!lookupDir) return undefined;
 
-//
-// Trying to find the app's dir by checking for the first
-// node_modules in the path string
-// For example, /home/userid/myapp/node_modules/electrode-archetype-opt-react
-// would yield app dir as /home/userid/myapp
-//
-function findAppDir() {
-  if (cwd.indexOf("node_modules") > 0) {
-    const splits = cwd.split("node_modules");
-    return Path.dirname(Path.join(splits[0], "x")); // remove trailing slash
-  }
-  return cwd;
+    let count = 0;
+    while (count < 100) {
+        const pkgFile = path.join(lookupDir, "package.json");
+        try {
+            await import(url.pathToFileURL(pkgFile).href);
+            return lookupDir;
+        } catch (err) {
+            //
+        }
+        const upDir = path.join(lookupDir, "..");
+        if (upDir === lookupDir) return undefined;
+        lookupDir = upDir;
+        count++;
+    }
+    return undefined;
 }
 
+/**
+ * Finds the application directory by checking for the first
+ * node_modules in the path string and trimming
+ * any node_modules path components found.
+ * For example, /home/userid/myapp/node_modules/electrode-archetype-opt-react
+ * would yield app dir as /home/userid/myapp
+ * @param {string} cwd - The current working directory.
+ * @returns {string} The determined application directory.
+ */
+function findAppDir(cwd) {
+    if (cwd.indexOf("node_modules") > 0) {
+        const splits = cwd.split("node_modules");
+        return path.dirname(path.join(splits[0], "x")); // remove trailing slash
+    }
+    return cwd;
+}
+
+/**
+ * Reads and parses the package.json file in the specified directory.
+ */
 function checkAppPackage(appDir) {
-  try {
-    return JSON.parse(Fs.readFileSync(Path.join(appDir, "./package.json")).toString());
-  } catch (e) {
-    return {};
-  }
+    try {
+        return JSON.parse(fs.readFileSync(path.join(appDir, "package.json"), { encoding: "utf-8" }));
+    } catch (e) {
+        return {};
+    }
 }
 
-function xarcOptCheck() {
-  //
-  // Find the app's dir by using npm's INIT_CWD and then fallback to
-  // looking for node_modules in the path
-  //
-  const appDir = lookupAppDirByInitCwd() || findAppDir();
-  const appPkg = checkAppPackage(appDir);
-  const myPkg = JSON.parse(Fs.readFileSync(Path.join(__dirname, "./package.json")).toString());
-  const myName = myPkg.name;
-  const optParams = Object.assign({}, myPkg.xarcOptCheck);
+/**
+ * Performs the xarc optimization check based on the package.json configurations.
+ * @returns {Promise<object>} The result object containing pass status and message.
+ */
+async function xarcOptCheck() {
+    const cwd = process.env.PWD || process.cwd();
+    const appDir = await lookupAppDirByInitCwd() || findAppDir(cwd);
+    const appPkg = checkAppPackage(appDir);
+    const myPkg = JSON.parse(fs.readFileSync(path.join(__dirname, "./package.json"), { encoding: "utf-8" }));
+    const myName = myPkg.name;
+    const optParams = { ...myPkg.xarcOptCheck };
 
-  const done = (pass, message) => {
-    return Object.assign({ pass, message }, optParams);
-  };
+    assert(
+        optParams.hasOwnProperty("optionalTagName"),
+        `opt archetype ${myName}: package.json missing xarcOptCheck.optionalTagName`
+    );
+
+    const done = (pass, message) => {
+        return Object.assign({ pass, message }, optParams);
+    };
 
   //
   // just the package itself
@@ -151,20 +158,17 @@ it excludes this package ${myName} - skip installing`
   return done(true);
 }
 
-module.exports = xarcOptCheck;
-
 if (require.main === module) {
-  const r = xarcOptCheck();
-
-  if (r.pass) {
-    if (r.message) {
-      console.log(r.message);
-    }
-  } else {
-    console.error(r.message);
-  }
-
-  process.exit(r.pass ? 0 : 1);
+    xarcOptCheck().then(result => {
+        if (result.pass) {
+            if (result.message) {
+                console.log(result.message);
+            }
+        } else {
+            console.error(result.message);
+        }
+        process.exit(result.pass ? 0 : 1);
+    });
 }
 
-module.exports.isSameMajorVersion = isSameMajorVersion;
+export { isSameMajorVersion };
