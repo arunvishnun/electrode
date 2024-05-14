@@ -54,7 +54,6 @@ specifiers:
   '@testing-library/jest-dom': ^5.17.0
   '@types/chai-as-promised': ^7.1.3
   '@types/jest': ^29.5.3
-  '@types/web': 0.0.143
   '@types/webpack': 5.28.0
   ansi-to-html: ^0.7.2
   autoprefixer: ^9.6.0
@@ -221,7 +220,6 @@ dependencies:
   '@testing-library/jest-dom': 5.17.0
   '@types/chai-as-promised': 7.1.8
   '@types/jest': 29.5.12
-  '@types/web': 0.0.143
   '@types/webpack': 5.28.0_webpack-cli@4.8.0
   ansi-to-html: 0.7.2
   autoprefixer: 9.8.8
@@ -3607,10 +3605,6 @@ packages:
 
   /@types/use-sync-external-store/0.0.3:
     resolution: {integrity: sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==}
-    dev: false
-
-  /@types/web/0.0.143:
-    resolution: {integrity: sha512-TazK16/OqeeqfQRB/Tv/NwzJagHbLi/w5g26FLbiFte/8LpPq6BuTyXHO/cpgwJpE6KGgFSNYb6Ap05Tz9XvCA==}
     dev: false
 
   /@types/webpack/5.28.0_webpack-cli@4.8.0:
@@ -17574,7 +17568,7 @@ packages:
     dev: false
 
   file:projects/app-dev.tgz_webpack-cli@4.8.0+webpack@5.91.0:
-    resolution: {integrity: sha512-iR834iCnfsFjLbdINGJYYE/m7i+7jPLDXj+spKsc3uVBx1zLjzH8S2JPqcnA23IaOZrbLJK+2IFa2EeewA44YQ==, tarball: file:projects/app-dev.tgz}
+    resolution: {integrity: sha512-cDkIsexp/EugJyvWKVooLr0ME9iUuT8FirWxfhq7sbfzzUCoc85OlXqRp6GFOHjx38C0K+i4w3zFHxLSSkT2ww==, tarball: file:projects/app-dev.tgz}
     id: file:projects/app-dev.tgz
     name: '@rush-temp/app-dev'
     version: 0.0.0
@@ -17598,7 +17592,6 @@ packages:
       '@types/node': 14.18.63
       '@types/sinon': 9.0.11
       '@types/sinon-chai': 3.2.12
-      '@types/web': 0.0.143
       '@types/webpack': 5.28.0_webpack-cli@4.8.0
       '@typescript-eslint/eslint-plugin': 4.33.0_f0632536362013fea90db5e6e3866f43
       '@typescript-eslint/parser': 4.33.0_eslint@7.32.0+typescript@5.4.5
