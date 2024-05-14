@@ -134,8 +134,6 @@ specifiers:
   preact: ^10.0.5
   ps-get: ^1.1.0
   react-query: ~3.39.0
-  react-router: ^6.23.0
-  react-router-dom: ~6.22.0
   read-pkg-up: ^7.0.1
   recoil: ^0.7.5
   redux-logger: ^3.0.6
@@ -301,8 +299,6 @@ dependencies:
   preact: 10.21.0
   ps-get: 1.1.0
   react-query: 3.39.3
-  react-router: 6.23.1
-  react-router-dom: 6.22.3
   read-pkg-up: 7.0.1
   recoil: 0.7.7
   redux-logger: 3.0.6
@@ -3560,7 +3556,7 @@ packages:
     resolution: {integrity: sha512-9y0Gflk3b0+NhQZ/oxGtaAJDvRywCa5sIyaVnounqLvmf93yBF4EgIRspePtkMs3Tr844nCclYMlcCNmLCvjuQ==}
     dependencies:
       '@types/chai': 4.3.16
-      '@types/sinon': 10.0.20
+      '@types/sinon': 9.0.11
     dev: false
 
   /@types/sinon/10.0.20:
@@ -5697,7 +5693,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001618
-      electron-to-chromium: 1.4.767
+      electron-to-chromium: 1.4.768
       node-releases: 2.0.14
       update-browserslist-db: 1.0.16_browserslist@4.23.0
     dev: false
@@ -7292,8 +7288,8 @@ packages:
       xaa: 1.7.3
     dev: false
 
-  /electron-to-chromium/1.4.767:
-    resolution: {integrity: sha512-nzzHfmQqBss7CE3apQHkHjXW77+8w3ubGCIoEijKCJebPufREaFETgGXWTkh32t259F3Kcq+R8MZdFdOJROgYw==}
+  /electron-to-chromium/1.4.768:
+    resolution: {integrity: sha512-z2U3QcvNuxdkk33YV7R1bVMNq7fL23vq3WfO5BHcqrm4TnDGReouBfYKLEFh5umoK1XACjEwp8mmnhXk2EJigw==}
     dev: false
 
   /emittery/0.13.1:
@@ -14042,17 +14038,6 @@ packages:
       use-sync-external-store: 1.2.2_react@18.3.1
     dev: false
 
-  /react-router-dom/6.22.3:
-    resolution: {integrity: sha512-7ZILI7HjcE+p31oQvwbokjk6OA/bnFxrhJ19n82Ex9Ph8fNAq+Hm/7KchpMGlTgWhUxRHMMCut+vEtNpWpowKw==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: '>=16.8'
-      react-dom: '>=16.8'
-    dependencies:
-      '@remix-run/router': 1.15.3
-      react-router: 6.22.3
-    dev: false
-
   /react-router-dom/6.22.3_react-dom@18.3.1+react@18.3.1:
     resolution: {integrity: sha512-7ZILI7HjcE+p31oQvwbokjk6OA/bnFxrhJ19n82Ex9Ph8fNAq+Hm/7KchpMGlTgWhUxRHMMCut+vEtNpWpowKw==}
     engines: {node: '>=14.0.0'}
@@ -14066,13 +14051,17 @@ packages:
       react-router: 6.22.3_react@18.3.1
     dev: false
 
-  /react-router/6.22.3:
-    resolution: {integrity: sha512-dr2eb3Mj5zK2YISHK++foM9w4eBnO23eKnZEDs7c880P6oKbrjz/Svg9+nxqtHQK+oMW4OtjZca0RqPglXxguQ==}
+  /react-router-dom/6.23.1_react-dom@18.3.1+react@18.3.1:
+    resolution: {integrity: sha512-utP+K+aSTtEdbWpC+4gxhdlPFwuEfDKq8ZrPFU65bbRJY+l706qjR7yaidBpo3MSeA/fzwbXWbKBI6ftOnP3OQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8'
+      react-dom: '>=16.8'
     dependencies:
-      '@remix-run/router': 1.15.3
+      '@remix-run/router': 1.16.1
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+      react-router: 6.23.1_react@18.3.1
     dev: false
 
   /react-router/6.22.3_react@18.3.1:
@@ -14083,15 +14072,6 @@ packages:
     dependencies:
       '@remix-run/router': 1.15.3
       react: 18.3.1
-    dev: false
-
-  /react-router/6.23.1:
-    resolution: {integrity: sha512-fzcOaRF69uvqbbM7OhvQyBTFDVrrGlsFdS3AL+1KfIBtGETibHzi3FkoTRyiDJnWNc2VxrfvR+657ROHjaNjqQ==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: '>=16.8'
-    dependencies:
-      '@remix-run/router': 1.16.1
     dev: false
 
   /react-router/6.23.1_react@18.3.1:
@@ -18397,7 +18377,7 @@ packages:
     dev: false
 
   file:projects/subapp-react.tgz:
-    resolution: {integrity: sha512-1SXFPRQnYr2zoFFdfcEXz6kSIcM8aFN6Jb1kGPIn1aJoaZO7JmtsEezAERxzXUJROtThZfHR2S+YAqK3hahmEw==, tarball: file:projects/subapp-react.tgz}
+    resolution: {integrity: sha512-gexchgPUPD66uCLonRrmR+4QFYPz+8xG34yEtthNlp5n4J4V6R5TOdWqRKA4ZzD19a1T9UAmemV301zNFVQnBg==, tarball: file:projects/subapp-react.tgz}
     name: '@rush-temp/subapp-react'
     version: 0.0.0
     dependencies:
@@ -18417,7 +18397,7 @@ packages:
       react-dom: 18.3.1_react@18.3.1
       react-redux: 9.1.2_react@18.3.1+redux@5.0.1
       react-router: 6.23.1_react@18.3.1
-      react-router-dom: 6.22.3_react-dom@18.3.1+react@18.3.1
+      react-router-dom: 6.23.1_react-dom@18.3.1+react@18.3.1
       redux: 5.0.1
       run-verify: 1.2.6
     transitivePeerDependencies:
