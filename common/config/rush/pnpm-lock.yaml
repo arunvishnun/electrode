@@ -47,6 +47,7 @@ specifiers:
   '@rush-temp/subapp-util': file:./projects/subapp-util.tgz
   '@rush-temp/subapp-web': file:./projects/subapp-web.tgz
   '@rush-temp/subapp2-basic': file:./projects/subapp2-basic.tgz
+  '@rush-temp/subapp2-basic-tooling': file:./projects/subapp2-basic-tooling.tgz
   '@rush-temp/subapp2-poc': file:./projects/subapp2-poc.tgz
   '@rush-temp/tag-renderer': file:./projects/tag-renderer.tgz
   '@rush-temp/webpack': file:./projects/webpack.tgz
@@ -214,6 +215,7 @@ dependencies:
   '@rush-temp/subapp-util': file:projects/subapp-util.tgz
   '@rush-temp/subapp-web': file:projects/subapp-web.tgz
   '@rush-temp/subapp2-basic': file:projects/subapp2-basic.tgz_@swc+core@1.5.7
+  '@rush-temp/subapp2-basic-tooling': file:projects/subapp2-basic-tooling.tgz_@swc+core@1.5.7
   '@rush-temp/subapp2-poc': file:projects/subapp2-poc.tgz_@swc+core@1.5.7
   '@rush-temp/tag-renderer': file:projects/tag-renderer.tgz_@swc+core@1.5.7
   '@rush-temp/webpack': file:projects/webpack.tgz_f2a28b5014595ae04ed37c1e84aca588
@@ -20403,8 +20405,39 @@ packages:
       - utf-8-validate
     dev: false
 
+<<<<<<< HEAD
   file:projects/subapp2-basic.tgz:
     resolution: {integrity: sha512-NIDasMY4jWvaS9l7XBdNih50XhjQ/w++8ujmXNYVdAfdsUazHityc/4wenHLXEBvqcPnTvF5r737BJAZCagKng==, tarball: file:projects/subapp2-basic.tgz}
+=======
+  file:projects/subapp2-basic-tooling.tgz_@swc+core@1.5.7:
+    resolution: {integrity: sha512-hSvVUvMqNErm4ldMp8jh18Tmoj3o90Vok60u1A3WrOWaSoKL92A4mO7Y+Eoe1WuxK7BGBjgARTcm0veknT7pzQ==, tarball: file:projects/subapp2-basic-tooling.tgz}
+    id: file:projects/subapp2-basic-tooling.tgz
+    name: '@rush-temp/subapp2-basic-tooling'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.24.4
+      '@module-federation/concat-runtime': 0.0.1
+      '@testing-library/jest-dom': 5.17.0
+      '@testing-library/react': 14.3.1
+      '@types/node': 20.12.7
+      '@xarc/fastify-server': 3.3.1
+      '@xarc/run': 1.1.1
+      prettier: 3.2.5
+      ts-node: 10.9.2_626b326e888ab5b77fbbe5d79698d401
+      typescript: 5.4.5
+      webpack-hot-middleware: 2.26.1
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
+      - react
+      - react-dom
+      - supports-color
+    dev: false
+
+  file:projects/subapp2-basic.tgz_@swc+core@1.5.7:
+    resolution: {integrity: sha512-crqAKLRd29MZ4wuGgQOzKxhe0Nbexe20wRz8o6ZfS2xwLOObuhVZQiTn1yjJ42qb84v0nYWrA32P7RMV+g1lfg==, tarball: file:projects/subapp2-basic.tgz}
+    id: file:projects/subapp2-basic.tgz
+>>>>>>> f2c643ae (chore: all changes)
     name: '@rush-temp/subapp2-basic'
     version: 0.0.0
     dependencies:

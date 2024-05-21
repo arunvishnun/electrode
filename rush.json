@@ -679,6 +679,12 @@
       "projectFolder": "samples/subapp2-basic",
       "shouldPublish": false,
       "skipRushCheck": true
+    },
+    {
+      "packageName": "subapp2-basic-tooling",
+      "projectFolder": "samples/subapp2-basic-tooling",
+      "shouldPublish": false,
+      "skipRushCheck": true
     }
    
   ]

@@ -119,6 +119,9 @@ export class AdminServer {
       port: this._opts.port,
     });
   }
+  async startRsPackDevServer() {
+    
+  }
 
   async start() {
     this._startTime = Date.now();
@@ -139,7 +142,8 @@ export class AdminServer {
 
     this._fullyStarted = false;
     await this._adminHttp._ready;
-    this._shutdown || (await this.startWebpackDevServer());
+    this._shutdown || 
+      (this._opts.useRsPack ? await this.startRsPackDevServer() : await this.startWebpackDevServer());
     this._shutdown || (await this.startAppServer());
 
     if (!this._shutdown && DEV_PROXY_ENABLED) {
