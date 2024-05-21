@@ -127,6 +127,7 @@ export type XarcInternalOptions = XarcOptions & {
   options: any;
   webpack: any;
   babel: any;
+  swc: any;
   jest: any;
   karma: any;
   config: any;
