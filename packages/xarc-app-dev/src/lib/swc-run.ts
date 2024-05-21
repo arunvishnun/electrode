@@ -21,8 +21,6 @@ let start;
 const xarcOptions = loadXarcOptions();
 const xarcCwd = xarcOptions.cwd;
 
-import * as Path from "path";
-
 /**
  * Get a SWC exclude function to filter out files that should not
  * be transpiled.
