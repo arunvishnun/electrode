@@ -1,5 +1,5 @@
 const rspack = require('@rspack/core');
-const RspackDevServer = require('@rspack/dev-server');
+const { startDevServer } = require('@rspack/cli');
 const path = require('path');
 
 const config = {
@@ -11,17 +11,22 @@ const config = {
   // Add your Rspack configurations here
 };
 
-const devServerOptions = {
-  contentBase: path.resolve(__dirname, 'dist'),
-  hot: true,
-  open: true,
-  // Add your dev server configurations here
-};
-
-function start(port = 3000, host = 'localhost') {
+async function start(port = 3000, host = 'localhost') {
   const compiler = rspack(config);
-  const server = new RspackDevServer(compiler, devServerOptions);
-
+  
+  const devServerOptions = {
+    port,
+    host,
+    hot: true,
+    open: true,
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+    },
+    // Add your dev server configurations here
+  };
+  
+  const server = await startDevServer(compiler, devServerOptions);
+  
   server.listen(port, host, () => {
     console.log(`Starting server on http://${host}:${port}`);
   });
