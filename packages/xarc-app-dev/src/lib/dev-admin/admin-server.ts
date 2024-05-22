@@ -120,7 +120,8 @@ export class AdminServer {
     });
   }
   async startRsPackDevServer() {
-    
+    const { start: rspackDevServer } = require('./rspack-dev-server-start');
+    rspackDevServer(3000, 'localhost');
   }
 
   async start() {
