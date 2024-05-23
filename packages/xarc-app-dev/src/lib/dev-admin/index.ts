@@ -30,6 +30,11 @@ function startDevAdmin() {
         type: "number",
         default: 0,
         desc: "HTTP port to serve admin data"
+      },
+      useRsPack: {
+        type: "boolean",
+        default: true,
+        desc: "Use rspack for dev server"
       }
     })
     .parse();

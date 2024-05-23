@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "lib": ["es2018"],
+    "lib": ["es2018", "dom"],
     "module": "CommonJS",
     "esModuleInterop": true,
     "target": "ES2018",
@@ -14,7 +14,8 @@
     "alwaysStrict": true,
     "strictFunctionTypes": true,
     "allowJs": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "skipLibCheck": true  // remove once FSWatcher issue in chokidar is resolved
   },
   "typedocOptions": {
     "entryPointStrategy": "expand"
