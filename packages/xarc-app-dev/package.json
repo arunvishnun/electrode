@@ -123,6 +123,7 @@
     "@xarc/run": "^1.1.1",
     "babel-eslint": "^10.1.0",
     "chai": "^4.3.6",
+    "compression": "^1.7.4",
     "electrode-server": "^3.3.0",
     "electrode-server1": "npm:electrode-server@^1.0.0",
     "eslint": "^7.16.0",
@@ -130,6 +131,7 @@
     "eslint-plugin-filenames": "^1.3.2",
     "eslint-plugin-jsdoc": "^32.0.2",
     "eslint-plugin-tsdoc": "^0.2.16",
+    "html-rspack-plugin": "^5.7.2",
     "mocha": "^10.4.0",
     "mock-require": "^3.0.3",
     "nyc": "^15.1.0",
@@ -141,7 +143,8 @@
     "source-map-support": "^0.5.21",
     "ts-node": "^10.9.2",
     "typedoc": "^0.22.15",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "webpack-bundle-analyzer": "^4.10.2"
   },
   "engines": {
     "node": ">= 14",

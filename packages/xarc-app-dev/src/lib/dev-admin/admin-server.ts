@@ -119,9 +119,106 @@ export class AdminServer {
       port: this._opts.port,
     });
   }
-  async startRsPackDevServer() {
-    const { start: rspackDevServer } = require('./rspack-dev-server-start');
-    rspackDevServer(3000, 'localhost');
+  // async startRsPackDevServer() {
+  //   const { start: rspackDevServer } = require('./rspack-dev-server-start');
+  //   rspackDevServer(3000, 'localhost');
+  // }
+
+  async startRsPackDevServer(debug = undefined) {
+    const progSig = `<s> [rspack.Progress] `;
+    const waitStart = async (info) => {
+      const cwdRegex = new RegExp(process.env.XARC_CWD || process.cwd(), "g");
+      let removeTimer;
+      let progLine = "";
+      let isNowMsg = "";
+
+      const setupCompletion = () => {
+        clearTimeout(removeTimer);
+        removeTimer = setTimeout(() => {
+          if (isNowMsg) {
+            this.updateStatus(isNowMsg);
+            isNowMsg = "";
+          }
+          this._io.removeItem(WDS_PROGRESS);
+        }, 2000).unref();
+      };
+
+      const watchWdsLog = (input) => {
+        const processLine = (data) => {
+          const line = data.toString();
+          if (line.trim().length < 1) {
+            return;
+          }
+          if (line.startsWith(progSig)) {
+            progLine = line.substring(progSig.length).replace(cwdRegex, ".");
+            this._io.addItem({
+              name: WDS_PROGRESS,
+              spinner: true,
+              display: `Rspack Progress`,
+            });
+            this._io.updateItem(WDS_PROGRESS, progLine);
+            const match = progLine.match(/\d{1,3}%/);
+            if (match) {
+              this.updateStatus(ck`Rspack Compile Progress [<orange>${match[0]}</>]`);
+            }
+            if ((match && match[0] === "100%") || isNowMsg) {
+              setupCompletion();
+              progLine = "";
+            }
+          } else if (line.includes("Rspack bundle is now")) {
+            isNowMsg = line;
+            if (progLine.includes("100%")) {
+              // the 100% progress line already received, so just setup timer
+              // to complete the final status message
+              setupCompletion();
+            } else {
+              this.updateStatus(line);
+            }
+          } else {
+            this._io.show(this._wds + line.replace(cwdRegex, "."));
+          }
+        };
+
+        const reader = readline.createInterface({ input });
+        reader.on("line", processLine);
+      };
+
+      watchWdsLog(info._child.stdout);
+      watchWdsLog(info._child.stderr);
+
+      this._webpackDevRelay.setWebpackServer(info._child);
+
+      return new Promise((resolve) => {
+        const listenForReport = () =>
+          info._child.once("message", (data) => {
+            if (data.name === "webpack-report") {
+              if (data.port) {
+                SERVER_ENVS[PROXY_SERVER_NAME].WEBPACK_DEV_PORT = data.port;
+                this.updateProxyServer({ webpackDevPort: parseInt(data.port, 10) });
+              }
+              resolve(null);
+            } else {
+              listenForReport();
+            }
+          });
+
+        listenForReport();
+
+        info._child.once("exit", () => {
+          resolve(null);
+        });
+      });
+    };
+
+    await this.startServer({
+      name: DEV_SERVER_NAME,
+      tag: this._wds,
+      killKey: "X",
+      exec: Path.join(__dirname, "rspack-dev-server.js"),
+      debug: debug || false,
+      skipWatch: debug === "--inspect-brk",
+      waitStart,
+    });
   }
 
   async start() {
