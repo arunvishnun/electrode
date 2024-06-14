@@ -1,9 +1,9 @@
 /* eslint-disable global-require, no-magic-numbers, max-statements */
-
 import * as Crypto from "crypto";
 import { loadXarcOptions } from "../util/load-xarc-options";
 import * as _ from "lodash";
 import { ModuleFederationPlugin } from "../container/ModuleFederationPlugin";
+import LoadOrderPlugin from "../plugins/load-order-plugin";
 const splitMap = {};
 
 function hashChunks(mod, chunks, key) {
@@ -136,6 +136,9 @@ function makeConfig(options) {
       }
     };
   }
+
+  // Ensure runtime and remote entry are loaded in the correct order
+  config.plugins = [].concat(config.plugins, new LoadOrderPlugin()).filter(x => x);
 
   return config;
 }
