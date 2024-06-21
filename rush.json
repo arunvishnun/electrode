@@ -679,7 +679,19 @@
       "projectFolder": "samples/subapp2-basic",
       "shouldPublish": false,
       "skipRushCheck": true
+    },
+    {
+      "packageName": "mfe-subappv1-shell",
+      "projectFolder": "samples/mfe-subappv1-shell",
+      "shouldPublish": false,
+      "skipRushCheck": true
+    },
+    {
+      "packageName": "mfe-subappv1-remote",
+      "projectFolder": "samples/mfe-subappv1-remote",
+      "shouldPublish": false,
+      "skipRushCheck": true
     }
-   
+    
   ]
 }

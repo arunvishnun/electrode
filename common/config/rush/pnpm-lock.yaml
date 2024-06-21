@@ -17,6 +17,8 @@ specifiers:
   '@rush-temp/electrode-node-resolver': file:./projects/electrode-node-resolver.tgz
   '@rush-temp/index-page': file:./projects/index-page.tgz
   '@rush-temp/jsx-renderer': file:./projects/jsx-renderer.tgz
+  '@rush-temp/mfe-subappv1-remote': file:./projects/mfe-subappv1-remote.tgz
+  '@rush-temp/mfe-subappv1-shell': file:./projects/mfe-subappv1-shell.tgz
   '@rush-temp/opt-archetype-check': file:./projects/opt-archetype-check.tgz
   '@rush-temp/opt-eslint': file:./projects/opt-eslint.tgz
   '@rush-temp/opt-jest': file:./projects/opt-jest.tgz
@@ -182,6 +184,8 @@ dependencies:
   '@rush-temp/electrode-node-resolver': file:projects/electrode-node-resolver.tgz
   '@rush-temp/index-page': file:projects/index-page.tgz
   '@rush-temp/jsx-renderer': file:projects/jsx-renderer.tgz
+  '@rush-temp/mfe-subappv1-remote': file:projects/mfe-subappv1-remote.tgz_webpack@5.92.0
+  '@rush-temp/mfe-subappv1-shell': file:projects/mfe-subappv1-shell.tgz_webpack@5.92.0
   '@rush-temp/opt-archetype-check': file:projects/opt-archetype-check.tgz
   '@rush-temp/opt-eslint': file:projects/opt-eslint.tgz
   '@rush-temp/opt-jest': file:projects/opt-jest.tgz
@@ -4622,7 +4626,7 @@ packages:
       async-eventemitter: 0.2.4
       chalk: 4.1.2
       electrode-confippet: 1.7.1
-      fastify: 4.27.0
+      fastify: 4.28.0
       fastify-plugin: 4.5.1
       lodash: 4.17.21
       require-at: 1.0.6
@@ -4755,16 +4759,16 @@ packages:
   /acorn-globals/7.0.1:
     resolution: {integrity: sha512-umOSDSDrfHbTNPuNpC2NSnnA3LUrqpevPb4T9jRx4MagXNS0rs+gwiTcAvqCRmsD6utzsrzNt+ebm00SNWiC3Q==}
     dependencies:
-      acorn: 8.11.3
-      acorn-walk: 8.3.2
+      acorn: 8.12.0
+      acorn-walk: 8.3.3
     dev: false
 
-  /acorn-import-attributes/1.9.5_acorn@8.11.3:
+  /acorn-import-attributes/1.9.5_acorn@8.12.0:
     resolution: {integrity: sha512-n02Vykv5uA3eHGM/Z2dQrcD56kL8TyDb2p1+0P83PClMnC/nc+anbQRhIOWnSq4Ke/KvDPrY3C9hDtC/A3eHnQ==}
     peerDependencies:
       acorn: ^8
     dependencies:
-      acorn: 8.11.3
+      acorn: 8.12.0
     dev: false
 
   /acorn-jsx/3.0.1:
@@ -4781,12 +4785,12 @@ packages:
       acorn: 7.4.1
     dev: false
 
-  /acorn-jsx/5.3.2_acorn@8.11.3:
+  /acorn-jsx/5.3.2_acorn@8.12.0:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      acorn: 8.11.3
+      acorn: 8.12.0
     dev: false
 
   /acorn-walk/7.2.0:
@@ -4794,9 +4798,11 @@ packages:
     engines: {node: '>=0.4.0'}
     dev: false
 
-  /acorn-walk/8.3.2:
-    resolution: {integrity: sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==}
+  /acorn-walk/8.3.3:
+    resolution: {integrity: sha512-MxXdReSRhGO7VlFe1bRG/oI7/mdLV9B9JJT0N8vZOhF7gFRR5l3M8W9G8JxmKV+JC5mGqJ0QvqfSOLsCPa4nUw==}
     engines: {node: '>=0.4.0'}
+    dependencies:
+      acorn: 8.12.0
     dev: false
 
   /acorn/3.3.0:
@@ -4817,8 +4823,8 @@ packages:
     hasBin: true
     dev: false
 
-  /acorn/8.11.3:
-    resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
+  /acorn/8.12.0:
+    resolution: {integrity: sha512-RTvkC4w+KNXrM39/lWCUaG0IbRkWdCv7W/IOW9oU6SawyxulvkQy5HQPVTKxEjczcUvapcrw3cFx/60VN/NRNw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: false
@@ -5360,7 +5366,7 @@ packages:
     hasBin: true
     dependencies:
       browserslist: 4.23.1
-      caniuse-lite: 1.0.30001633
+      caniuse-lite: 1.0.30001634
       normalize-range: 0.1.2
       num2fraction: 1.2.2
       picocolors: 0.2.1
@@ -6086,8 +6092,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001633
-      electron-to-chromium: 1.4.802
+      caniuse-lite: 1.0.30001634
+      electron-to-chromium: 1.4.803
       node-releases: 2.0.14
       update-browserslist-db: 1.0.16_browserslist@4.23.1
     dev: false
@@ -6230,13 +6236,13 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.23.1
-      caniuse-lite: 1.0.30001633
+      caniuse-lite: 1.0.30001634
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: false
 
-  /caniuse-lite/1.0.30001633:
-    resolution: {integrity: sha512-6sT0yf/z5jqf8tISAgpJDrmwOpLsrpnyCdD/lOZKvKkkJK4Dn0X5i7KF7THEZhOq+30bmhwBlNEaqPUiHiKtZg==}
+  /caniuse-lite/1.0.30001634:
+    resolution: {integrity: sha512-fbBYXQ9q3+yp1q1gBk86tOFs4pyn/yxFm5ZNP18OXJDfA3txImOY9PhfxVggZ4vRHDqoU8NrKU81eN0OtzOgRA==}
     dev: false
 
   /caseless/0.12.0:
@@ -7699,8 +7705,8 @@ packages:
       xaa: 1.7.3
     dev: false
 
-  /electron-to-chromium/1.4.802:
-    resolution: {integrity: sha512-TnTMUATbgNdPXVSHsxvNVSG0uEd6cSZsANjm8c9HbvflZVVn1yTRcmVXYT1Ma95/ssB/Dcd30AHweH2TE+dNpA==}
+  /electron-to-chromium/1.4.803:
+    resolution: {integrity: sha512-61H9mLzGOCLLVsnLiRzCbc63uldP0AniRYPV3hbGVtONA1pI7qSGILdbofR7A8TMbOypDocEAjH/e+9k1QIe3g==}
     dev: false
 
   /emittery/0.13.1:
@@ -8197,8 +8203,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-jsdoc/48.2.11_eslint@6.8.0:
-    resolution: {integrity: sha512-mM4RSR1hBPwdtI+boITfDZTxvEYTANSWr3y/D+YR8OshtU3pMgYXC8LrjudhYf0O0g67A7QwlT1gZzhmNy1S4Q==}
+  /eslint-plugin-jsdoc/48.2.12_eslint@6.8.0:
+    resolution: {integrity: sha512-sO9sKkJx5ovWoRk9hV0YiNzXQ4Z6j27CqE/po2E3wddZVuy9wvKPSTiIhpxMTrP/qURvKayJIDB2+o9kyCW1Fw==}
     engines: {node: '>=18'}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -8216,8 +8222,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-jsdoc/48.2.11_eslint@7.32.0:
-    resolution: {integrity: sha512-mM4RSR1hBPwdtI+boITfDZTxvEYTANSWr3y/D+YR8OshtU3pMgYXC8LrjudhYf0O0g67A7QwlT1gZzhmNy1S4Q==}
+  /eslint-plugin-jsdoc/48.2.12_eslint@7.32.0:
+    resolution: {integrity: sha512-sO9sKkJx5ovWoRk9hV0YiNzXQ4Z6j27CqE/po2E3wddZVuy9wvKPSTiIhpxMTrP/qURvKayJIDB2+o9kyCW1Fw==}
     engines: {node: '>=18'}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -8235,8 +8241,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-jsdoc/48.2.11_eslint@8.57.0:
-    resolution: {integrity: sha512-mM4RSR1hBPwdtI+boITfDZTxvEYTANSWr3y/D+YR8OshtU3pMgYXC8LrjudhYf0O0g67A7QwlT1gZzhmNy1S4Q==}
+  /eslint-plugin-jsdoc/48.2.12_eslint@8.57.0:
+    resolution: {integrity: sha512-sO9sKkJx5ovWoRk9hV0YiNzXQ4Z6j27CqE/po2E3wddZVuy9wvKPSTiIhpxMTrP/qURvKayJIDB2+o9kyCW1Fw==}
     engines: {node: '>=18'}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -8630,8 +8636,8 @@ packages:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.11.3
-      acorn-jsx: 5.3.2_acorn@8.11.3
+      acorn: 8.12.0
+      acorn-jsx: 5.3.2_acorn@8.12.0
       eslint-visitor-keys: 3.4.3
     dev: false
 
@@ -8929,8 +8935,8 @@ packages:
       - supports-color
     dev: false
 
-  /fastify/4.27.0:
-    resolution: {integrity: sha512-ci9IXzbigB8dyi0mSy3faa3Bsj0xWAPb9JeT4KRzubdSb6pNhcADRUaXCBml6V1Ss/a05kbtQls5LBmhHydoTA==}
+  /fastify/4.28.0:
+    resolution: {integrity: sha512-HhW7UHW07YlqH5qpS0af8d2Gl/o98DhJ8ZDQWHRNDnzeOhZvtreWsX8xanjGgXmkYerGbo8ax/n40Dpwqkot8Q==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.4.1
@@ -11226,7 +11232,7 @@ packages:
         optional: true
     dependencies:
       abab: 2.0.6
-      acorn: 8.11.3
+      acorn: 8.12.0
       acorn-globals: 6.0.0
       cssom: 0.4.4
       cssstyle: 2.3.0
@@ -11268,7 +11274,7 @@ packages:
         optional: true
     dependencies:
       abab: 2.0.6
-      acorn: 8.11.3
+      acorn: 8.12.0
       acorn-globals: 6.0.0
       cssom: 0.5.0
       cssstyle: 2.3.0
@@ -11310,7 +11316,7 @@ packages:
         optional: true
     dependencies:
       abab: 2.0.6
-      acorn: 8.11.3
+      acorn: 8.12.0
       acorn-globals: 7.0.1
       cssom: 0.5.0
       cssstyle: 2.3.0
@@ -13801,7 +13807,7 @@ packages:
     dependencies:
       autoprefixer: 9.8.8
       browserslist: 4.23.1
-      caniuse-lite: 1.0.30001633
+      caniuse-lite: 1.0.30001634
       css-blank-pseudo: 0.1.4
       css-has-pseudo: 0.10.0
       css-prefers-color-scheme: 3.1.1
@@ -16244,7 +16250,7 @@ packages:
     hasBin: true
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.11.3
+      acorn: 8.12.0
       commander: 2.20.3
       source-map-support: 0.5.21
     dev: false
@@ -16417,8 +16423,8 @@ packages:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 17.0.45
-      acorn: 8.11.3
-      acorn-walk: 8.3.2
+      acorn: 8.12.0
+      acorn-walk: 8.3.3
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
@@ -16448,8 +16454,8 @@ packages:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 14.18.63
-      acorn: 8.11.3
-      acorn-walk: 8.3.2
+      acorn: 8.12.0
+      acorn-walk: 8.3.3
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
@@ -16479,8 +16485,8 @@ packages:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 18.19.34
-      acorn: 8.11.3
-      acorn-walk: 8.3.2
+      acorn: 8.12.0
+      acorn-walk: 8.3.3
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
@@ -16510,8 +16516,8 @@ packages:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 20.14.2
-      acorn: 8.11.3
-      acorn-walk: 8.3.2
+      acorn: 8.12.0
+      acorn-walk: 8.3.3
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
@@ -16541,8 +16547,8 @@ packages:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 18.19.34
-      acorn: 8.11.3
-      acorn-walk: 8.3.2
+      acorn: 8.12.0
+      acorn-walk: 8.3.3
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
@@ -16572,8 +16578,8 @@ packages:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 13.13.52
-      acorn: 8.11.3
-      acorn-walk: 8.3.2
+      acorn: 8.12.0
+      acorn-walk: 8.3.3
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
@@ -17342,8 +17348,8 @@ packages:
       '@webassemblyjs/ast': 1.12.1
       '@webassemblyjs/wasm-edit': 1.12.1
       '@webassemblyjs/wasm-parser': 1.12.1
-      acorn: 8.11.3
-      acorn-import-attributes: 1.9.5_acorn@8.11.3
+      acorn: 8.12.0
+      acorn-import-attributes: 1.9.5_acorn@8.12.0
       browserslist: 4.23.1
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.17.0
@@ -17909,7 +17915,7 @@ packages:
       eslint: 7.32.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@7.32.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@7.32.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@7.32.0
       eslint-plugin-tsdoc: 0.3.0
       fast-async: 7.0.6
       filter-scan-dir: 1.5.5
@@ -17987,7 +17993,7 @@ packages:
       eslint: 8.57.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@8.57.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@8.57.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@8.57.0
       eslint-plugin-tsdoc: 0.2.17
       isomorphic-loader: 4.5.0
       mocha: 10.4.0
@@ -18062,7 +18068,7 @@ packages:
       eslint: 7.32.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@7.32.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@7.32.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@7.32.0
       eslint-plugin-tsdoc: 0.2.17
       prettier: 2.8.8
       source-map-support: 0.5.21
@@ -18113,7 +18119,7 @@ packages:
       eslint: 8.57.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@8.57.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@8.57.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@8.57.0
       lodash: 4.17.21
       mocha: 10.4.0
       nyc: 15.1.0
@@ -18158,7 +18164,7 @@ packages:
       eslint: 7.32.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@7.32.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@7.32.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@7.32.0
       eslint-plugin-tsdoc: 0.3.0
       lodash: 4.17.21
       mocha: 10.4.0
@@ -18183,6 +18189,64 @@ packages:
       - '@swc/core'
       - '@swc/wasm'
       - supports-color
+    dev: false
+
+  file:projects/mfe-subappv1-remote.tgz_webpack@5.92.0:
+    resolution: {integrity: sha512-GlqtuUPalLAar2FM5S822FJPO3R6W2HmkJvhel1EFlOXQYLAavOh9j6eSEUC0VSzGsbKodZgnWEaZOJ8u6EQLA==, tarball: file:projects/mfe-subappv1-remote.tgz}
+    id: file:projects/mfe-subappv1-remote.tgz
+    name: '@rush-temp/mfe-subappv1-remote'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.24.7
+      '@module-federation/concat-runtime': 0.0.1
+      '@xarc/fastify-server': 4.0.9
+      '@xarc/run': 1.1.1
+      electrode-confippet: 1.7.1
+      history: 5.3.0
+      html-webpack-plugin: 5.6.0_webpack@5.92.0
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+      react-redux: 8.1.3_25914b775dd669e94923110b39c04f2c
+      react-router: 6.23.1_react@18.3.1
+      react-router-dom: 6.23.1_react-dom@18.3.1+react@18.3.1
+      redux: 4.2.1
+      webpack-hot-middleware: 2.26.1
+    transitivePeerDependencies:
+      - '@rspack/core'
+      - '@types/react'
+      - '@types/react-dom'
+      - react-native
+      - webpack
+    dev: false
+
+  file:projects/mfe-subappv1-shell.tgz_webpack@5.92.0:
+    resolution: {integrity: sha512-M3XZFIek2JehvSVrnOkBqki+klZWglrvtRIofleyvu07akU/YwnFur5JDOJj/QKuoaBoh7f6XvBAL6PgwWarCA==, tarball: file:projects/mfe-subappv1-shell.tgz}
+    id: file:projects/mfe-subappv1-shell.tgz
+    name: '@rush-temp/mfe-subappv1-shell'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.24.7
+      '@module-federation/concat-runtime': 0.0.1
+      '@xarc/fastify-server': 4.0.9
+      '@xarc/run': 1.1.1
+      electrode-confippet: 1.7.1
+      history: 5.3.0
+      html-webpack-plugin: 5.6.0_webpack@5.92.0
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+      react-redux: 8.1.3_25914b775dd669e94923110b39c04f2c
+      react-router: 6.23.1_react@18.3.1
+      react-router-dom: 6.23.1_react-dom@18.3.1+react@18.3.1
+      redux: 4.2.1
+      webpack-hot-middleware: 2.26.1
+    transitivePeerDependencies:
+      - '@rspack/core'
+      - '@types/react'
+      - '@types/react-dom'
+      - react-native
+      - webpack
     dev: false
 
   file:projects/opt-archetype-check.tgz:
@@ -18477,7 +18541,7 @@ packages:
       eslint: 8.57.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@8.57.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@8.57.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@8.57.0
       eslint-plugin-tsdoc: 0.3.0
       jsdom: 16.7.0
       jsdom-global: 3.0.2_jsdom@16.7.0
@@ -18526,7 +18590,7 @@ packages:
       eslint: 7.32.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@7.32.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@7.32.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@7.32.0
       jsdom: 16.7.0
       jsdom-global: 3.0.2_jsdom@16.7.0
       mocha: 10.4.0
@@ -18573,7 +18637,7 @@ packages:
       eslint: 7.32.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@7.32.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@7.32.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@7.32.0
       mocha: 10.4.0
       nyc: 15.1.0
       react: 18.3.1
@@ -18617,7 +18681,7 @@ packages:
       eslint: 7.32.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@7.32.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@7.32.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@7.32.0
       mocha: 10.4.0
       nyc: 15.1.0
       react: 18.3.1
@@ -18659,7 +18723,7 @@ packages:
       eslint: 8.57.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@8.57.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@8.57.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@8.57.0
       jsdom: 19.0.0
       jsdom-global: 3.0.2_jsdom@19.0.0
       mocha: 10.4.0
@@ -18709,7 +18773,7 @@ packages:
       eslint: 8.57.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@8.57.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@8.57.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@8.57.0
       eslint-plugin-tsdoc: 0.2.17
       history: 5.3.0
       jsdom: 19.0.0
@@ -18762,7 +18826,7 @@ packages:
       eslint: 8.57.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@8.57.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@8.57.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@8.57.0
       eslint-plugin-tsdoc: 0.3.0
       mocha: 10.4.0
       nyc: 15.1.0
@@ -18802,7 +18866,7 @@ packages:
       eslint: 8.57.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@8.57.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@8.57.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@8.57.0
       mocha: 10.4.0
       munchy: 1.0.9
       nyc: 15.1.0
@@ -18998,7 +19062,7 @@ packages:
       eslint: 7.32.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@7.32.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@7.32.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@7.32.0
       jsdom: 16.7.0
       jsdom-global: 3.0.2_jsdom@16.7.0
       lodash: 4.17.21
@@ -19088,7 +19152,7 @@ packages:
       eslint: 8.57.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@8.57.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@8.57.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@8.57.0
       lodash: 4.17.21
       mocha: 10.4.0
       nyc: 15.1.0
@@ -19172,7 +19236,7 @@ packages:
       eslint: 6.8.0
       eslint-config-walmart: 2.2.1
       eslint-plugin-filenames: 1.3.2_eslint@6.8.0
-      eslint-plugin-jsdoc: 48.2.11_eslint@6.8.0
+      eslint-plugin-jsdoc: 48.2.12_eslint@6.8.0
       file-loader: 6.2.0_webpack@5.92.0
       filter-scan-dir: 1.1.1
       lodash: 4.17.21
