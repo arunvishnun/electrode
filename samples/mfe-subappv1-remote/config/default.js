@@ -1,4 +1,5 @@
 "use strict";
+const { httpsConfig } = require("./base");
 
 const defaultListenPort = 3000;
 
@@ -27,5 +28,6 @@ module.exports = {
         ignoreErrors: true
       }
     }
-  }
+  },
+  // ...httpsConfig
 };

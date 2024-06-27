@@ -5,7 +5,11 @@ exports.xrun = xrun;
 xrun.updateEnv(
   {
     WEBPACK_DEV_PORT: 0,
-    APP_SERVER_PORT: 0
+    APP_SERVER_PORT: 9000,
+    MFE_MODE: "standalone",
+    PORT: 8444, // Dev proxy port
+    HOST: "dev.walmart.com",
+    XARC_DEV_HTTPS: 9292 // 
   },
   { override: false }
 );
@@ -21,7 +25,7 @@ loadDevTasks(xrun, {
       subAppsToExpose: ["Deal", "Extras"],
       shared: {
         react: {
-          eager: true,
+          // eager: true,
           requiredVersion: deps.react,
           import: "react",
           shareKey: "react",
@@ -29,22 +33,22 @@ loadDevTasks(xrun, {
           singleton: true
         },
         "react-dom": {
-          eager: true,
+          // eager: true,
           requiredVersion: deps["react-dom"],
           singleton: true
         },
         history: {
-          eager: true,
+          // eager: true,
           requiredVersion: deps["history"],
           singleton: true
         },
         "subapp-web": {
-          eager: true,
+          // eager: true,
           requiredVersion: deps["subapp-web"],
           singleton: true
         },
         "@babel/runtime": {
-          eager: true,
+          // eager: true,
           requiredVersion: deps["@babel/runtime"],
           singleton: true
         }

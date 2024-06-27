@@ -5,7 +5,10 @@ exports.xrun = xrun;
 xrun.updateEnv(
   {
     WEBPACK_DEV_PORT: 0,
-    APP_SERVER_PORT: 0
+    APP_SERVER_PORT: 0,
+    // MFE_MODE: "standalone",
+    PORT: 443,
+    HOST: "dev.walmart.com"
   },
   { override: false }
 );
@@ -14,14 +17,14 @@ const deps = require("./package.json").dependencies;
 
 loadDevTasks(xrun, {
   webpackOptions: {
-    minify: true,
+    // minify: true,
     devtool: "eval-cheap-module-source-map",
     v1RemoteSubApps: {
       name: "poc-subapp",
       subAppsToExpose: ["Deal", "Extras"],
       shared: {
         react: {
-          eager: true,
+          // eager: true,
           requiredVersion: deps.react,
           import: "react",
           shareKey: "react",
@@ -29,7 +32,7 @@ loadDevTasks(xrun, {
           singleton: true
         },
         "react-dom": {
-          eager: true,
+          // eager: true,
           requiredVersion: deps["react-dom"],
           singleton: true
         },
