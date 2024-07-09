@@ -3,7 +3,9 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Products } from "../components/products";
 import { Navigation } from "../components/navigation";
 import { Deals } from "../components/deals";
-
+// import("../components/deals").then(({Deals}) => {
+//   console.log(Deals);
+// })
 const Home = () => {
   return (
     <AppContext.Consumer>

@@ -37,17 +37,17 @@ loadDevTasks(xrun, {
           singleton: true
         },
         history: {
-          eager: true,
+          // eager: true,
           requiredVersion: deps["history"],
           singleton: true
         },
         "subapp-web": {
-          eager: true,
+          // eager: true,
           requiredVersion: deps["subapp-web"],
           singleton: true
         },
         "@babel/runtime": {
-          eager: true,
+          // eager: true,
           requiredVersion: deps["@babel/runtime"],
           singleton: true
         }

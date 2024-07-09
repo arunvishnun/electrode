@@ -1,44 +1,28 @@
-import { React, loadSubApp, AppContext } from "subapp-react";
-import { Route, BrowserRouter, Routes } from "react-router-dom";
-import { Products } from "../components/products";
-import { Navigation } from "../components/navigation";
-import { Deals } from "../components/deals";
+import { React, loadSubApp } from "subapp-react";
+import { BrowserRouter } from "react-router-dom";
+// import LoadSubapp from "../common/load-subapp";
+import { FederatedModule } from "../common/FederatedModule";
 
-const Home = () => {
-  return (
-    <>some text</>
-    // <AppContext.Consumer>
-    //   {({ isSsr, ssr, subApp }) => {
-    //     return (
-    //       <div className="container-fluid text-center">
-    //         <p>HOME</p>
-    //         <div>SubApp name: {subApp ? subApp.name : "Not Available from context"}</div>
-    //         <div>
-    //           IS_SSR: {`${Boolean(isSsr)}`} HAS_REQUEST: {ssr && ssr.request ? "yes" : "no"}
-    //         </div>
-    //       </div>
-    //     );
-    //   }}
-    // </AppContext.Consumer>
-  );
-};
-
-const Stores = () => `Stores`;
-const Contact = () => `Contact`;
 
 const MainBody = props => {
   return (
     <div>
       Some content!
-      {/* <Navigation />
-      <Routes>
-        <Route path="/" exact element={<Home />} {...props} />
-        <Route path="/products" element={<Products />} {...props} />
-        <Route path="/deals" element={<Deals />} {...props} />
-        <Route path="/stores" element={<Stores />} {...props} />
-        <Route path="/contact" element={<Contact />} {...props} />
-      </Routes> */}
-
+      <FederatedModule 
+        remote="mfe-subappv1-remote" // remote apps names
+        module="Deals" // can be subapp or a component that is exposed by mfe-subappv1-remote
+        fallback={<Spinner />} // can provide a custom component. If not, should show `loading...`
+        
+        />
+      {/* <LoadSubapp 
+        dynamic 
+        subappId="v1-federation-demo-subapp" 
+        name="Demo" 
+        key="demo" 
+        remote={true} 
+        fallback={<Spinner />} 
+        {...props} 
+      /> */}
     </div>
   );
 };

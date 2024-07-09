@@ -4,6 +4,7 @@ import { loadXarcOptions } from "../util/load-xarc-options";
 import * as _ from "lodash";
 import { ModuleFederationPlugin } from "../container/ModuleFederationPlugin";
 import LoadOrderPlugin from "../plugins/load-order-plugin";
+import MFRuntimePlugin from "../plugins/mf-runtime-plugin";
 const splitMap = {};
 
 function hashChunks(mod, chunks, key) {
@@ -76,6 +77,7 @@ function makeConfig(options) {
       } as any);
     });
     config.plugins = [].concat(config.plugins, modFedPlugins).filter(x => x);
+    // config.plugins.push(new MFRuntimePlugin());
 
     // if app is exposing modules for remote loading, then we must set following
     if (exposeRemote > 0) {
@@ -84,7 +86,7 @@ function makeConfig(options) {
         // remote container to load its bundles
         options.currentConfig.output.publicPath = "auto";
       }
-      runtimeChunk = undefined;
+      // runtimeChunk = undefined;
     }
   }
 
@@ -138,7 +140,7 @@ function makeConfig(options) {
   }
 
   // Ensure runtime and remote entry are loaded in the correct order
-  config.plugins = [].concat(config.plugins, new LoadOrderPlugin()).filter(x => x);
+  // config.plugins = [].concat(config.plugins, new LoadOrderPlugin()).filter(x => x);
 
   return config;
 }
