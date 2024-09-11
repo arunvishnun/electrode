@@ -43,7 +43,7 @@
     "@hapi/good": "^8.2.4",
     "@hapi/good-console": "^8.1.2",
     "@hapi/inert": "^5.1.2",
-    "@xarc/app": "^8.0.0",
+    "@xarc/app": "^9.0.0",
     "@xarc/opt-react": "^1.0.0",
     "electrode-confippet": "^1.5.0",
     "electrode-cookies": "^1.0.0",
@@ -56,7 +56,7 @@
     "milligram": "^1.3.0",
     "react-notify-toast": "^0.5.0",
     "react-router-config": "^5.1.1",
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^6.0.0"
   },
   "devDependencies": {
     "@xarc/app-dev": "^8.0.0",
