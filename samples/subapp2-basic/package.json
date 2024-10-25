@@ -36,7 +36,7 @@
     "@xarc/fastify-server": "^3.3.0",
     "@xarc/app": "^11.0.8",
     "@xarc/react": "^1.0.4",
-    "@xarc/react-query": "^1.0.5",
+    "@xarc/react-query": "^2.0.0",
     "@xarc/react-redux": "^1.1.4",
     "@xarc/react-router": "^1.1.4",
     "@module-federation/concat-runtime": "~0.0.1"
