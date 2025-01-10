@@ -8,6 +8,7 @@
     "target": "ES5",
     "preserveConstEnums": false,
     "sourceMap": true,
+    "inlineSources": true,
     "declaration": true,
     "types": [],
     "forceConsistentCasingInFileNames": true,

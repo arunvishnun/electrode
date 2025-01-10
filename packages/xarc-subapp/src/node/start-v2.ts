@@ -30,7 +30,15 @@ export function startSubApp(): any {
 
       //
       return `<!-- Starting SubApp -->
-<script${scriptNonceAttr}>window.xarcV2.start()</script>
+<script${scriptNonceAttr}>
+  window.addEventListener("subappsConfigReady", () => {
+    if (xarcV2 && typeof xarcV2.start === "function") {
+      xarcV2.start();
+    } else {
+      console.error("xarcV2.start is not defined or not a function.");
+    }
+  });
+</script>
 `;
     }
   };

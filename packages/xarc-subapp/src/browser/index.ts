@@ -91,6 +91,11 @@ const _dynamics = [];
  *
  */
 export function declareSubApp(options: SubAppOptions): SubAppDef {
+  const w = window as any;
+  w._wml = w._wml || {};
+  w._wml._subappsConfig = w._wml._subappsConfig || { promises: [] };
+  const IS_STANDALONE_MFE = true;
+
   _setupEnvHooks();
 
   const existDef = getContainer().get(options.name);
@@ -102,13 +107,36 @@ export function declareSubApp(options: SubAppOptions): SubAppDef {
     def._renderPipelines = existDef._renderPipelines;
   }
 
-  //
-  // Preload module so it's available ASAP.  This also ensure module is reloaded when
-  // a module that HMR updated is re-declaring a subapp.
-  //
-  def._getModule();
+  if (IS_STANDALONE_MFE) {
+    const modulePromise = def
+      ._getModule()
+      .then(() => {
+        console.log(`Module for ${options.name} loaded.`);
+      })
+      .catch(err => {
+        console.error(`Error loading module for ${options.name}:`, err);
+      });
 
-  // In production build, webpack will replace module.hot with false and the code will be optimized out
+    w._wml._subappsConfig.promises.push(modulePromise);
+
+    // Trigger an event when all promises are resolved
+    Promise.all(w._wml._subappsConfig.promises)
+      .then(() => {
+        const event = new Event("subappsConfigReady");
+        window.dispatchEvent(event);
+      })
+      .catch(err => {
+        console.error("Error resolving _subappsConfig promises:", err);
+      });
+  }
+
+  // Preload module synchronously
+  if (typeof def._getModule === "function") {
+    def._getModule().catch(err => {
+      console.error(`Error preloading module for ${options.name}:`, err);
+    });
+  }
+
   // @ts-ignore
   if (module.hot) {
     def._mount = function (info: SubAppMountInfo) {
