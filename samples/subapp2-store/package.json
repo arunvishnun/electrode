@@ -37,7 +37,7 @@
     "@xarc/fastify-server": "^2.0.0",
     "@xarc/react": "^0.0.3",
     "@xarc/react-redux": "^0.1.0",
-    "@xarc/react-redux-observable": "^0.1.0",
+    "@xarc/react-redux-observable": "^0.3.3",
     "@xarc/react-router": "^0.1.0",
     "classnames": "^2.2.6",
     "recoil": "^0.1.2"
