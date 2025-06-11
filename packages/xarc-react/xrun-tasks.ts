@@ -11,7 +11,7 @@ xrun.load("user", {
       ...[
         "tsconfig.node.cjs.json",
         "tsconfig.node.esm.json",
-        "tsconfig.browser.es2x.esm.json"
+        "tsconfig.browser.esm.json"
       ].map(config => exec(`tsc --build ${config} --pretty`))
     );
   }

@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist-browser~es2x~esm~",
+    "lib": ["ES2022", "DOM"],                    // Ensures full DOM API access
+    "types": ["react", "react-dom"]
+  },
+  "include": ["src/browser", "src/common"]
+}

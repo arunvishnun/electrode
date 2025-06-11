@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                      // Widely supported in modern environments
+    "module": "ES2020",                      // Outputs native ESM
+    "lib": ["ES2022", "DOM"],                // Latest JS + browser APIs
+    "jsx": "react-jsx",                      // React 17+ JSX runtime
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "strict": true,
+    "declaration": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "alwaysStrict": true,
+    "strictFunctionTypes": true
+  }
+}

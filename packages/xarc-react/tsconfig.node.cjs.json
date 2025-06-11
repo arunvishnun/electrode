@@ -1,22 +1,9 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist-node-cjs",
-    "jsx": "react",
-    "jsxFactory": "createElement",
-    "lib": ["es2018"],
-    "module": "CommonJS",
-    "esModuleInterop": true,
-    "importHelpers": true,
-    "target": "ES2018",
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "declaration": true,
-    "types": ["node", "react", "react-dom"],
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "alwaysStrict": true,
-    "strictFunctionTypes": true,
-    "moduleResolution": "Node"
+    "module": "CommonJS",                         // Overrides module for CJS build
+    "types": ["node", "react", "react-dom"]
   },
   "include": ["src/node", "src/common"]
 }

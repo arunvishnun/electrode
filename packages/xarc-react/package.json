@@ -4,10 +4,25 @@
   "description": "xarc web app platform support for React framework",
   "main": "dist-node-cjs/node/index.js",
   "module": "dist-node-esm/node/index.js",
+  "types": "dist-node-esm/node/index.d.ts",
+  "exports": {
+    "require": "./dist-node-cjs/node/index.js",
+    "import": "./dist-node-esm/node/index.js",
+    "browser": {
+      "require": "./dist-browser~es2x~esm~/browser/index.js",
+      "import": "./dist-browser~es2x~esm~/browser/index.js"
+    }
+  },
   "browser": {
-    "./dist-node-cjs/node/index.js": "./dist-browser~es5~cjs~/browser/index.js",
+    "./dist-node-cjs/node/index.js": "./dist-browser~es2x~esm~/browser/index.js",
     "./dist-node-esm/node/index.js": "./dist-browser~es2x~esm~/browser/index.js"
   },
+  "files": [
+    "dist-node-cjs",
+    "dist-node-esm",
+    "dist-browser~es2x~esm~",
+    "src"
+  ],
   "scripts": {
     "build": "xrun user/build",
     "test": "xrun xarc/test-only",
@@ -55,19 +70,11 @@
     "sinon": "^14.0.0",
     "sinon-chai": "^3.7.0",
     "source-map-support": "^0.5.21",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "typedoc": "^0.25.13",
     "typescript": "^5.4.5",
     "xsh": "^0.4.5"
   },
-  "files": [
-    "dist",
-    "dist-browser~es2x~esm~",
-    "dist-browser~es5~cjs~",
-    "dist-node-cjs",
-    "dist-node-esm",
-    "src"
-  ],
   "nyc": {
     "extends": [
       "@istanbuljs/nyc-config-typescript"
