@@ -47,7 +47,7 @@
     "subapp-react": "../../packages/subapp-react",
     "subapp-server": "../../packages/subapp-server",
     "subapp-util": "../../packages/subapp-util",
-    "subapp-web": "^1.0.47"
+    "subapp-web": "^2.1.3"
   },
   "devDependencies": {
     "@xarc/app-dev": "^8.0.0"
