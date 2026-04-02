@@ -40,7 +40,7 @@
     "electrode-archetype-opt-react-intl": "^1.0.0",
     "electrode-csrf-jwt": "^1.0.0",
     "electrode-react-webapp": "^3.2.0",
-    "electrode-redux-router-engine": "^2.1.8",
+    "electrode-redux-router-engine": "^5.0.0",
     "electrode-server": "^1.0.0",
     "electrode-static-paths": "^1.0.0",
     "es6-promise": "^4.0.5",
