@@ -30,7 +30,7 @@
     "npm": ">= 6"
   },
   "dependencies": {
-    "@xarc/app": "^8.1.1",
+    "@xarc/app": "^9.0.0",
     "electrode-server": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
