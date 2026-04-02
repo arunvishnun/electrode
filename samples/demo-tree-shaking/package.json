@@ -47,7 +47,7 @@
     "electrode-confippet": "^1.0.0",
     "electrode-cookies": "^1.0.0",
     "electrode-react-webapp": "^2.1.0",
-    "electrode-redux-router-engine": "^2.0.0",
+    "electrode-redux-router-engine": "^5.0.0",
     "electrode-server": "^1.0.0",
     "electrode-static-paths": "^1.0.0",
     "good": "^7.3.0",
